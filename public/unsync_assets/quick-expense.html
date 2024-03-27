@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Unesync Product Prototype</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+
+        <link rel="stylesheet" href="assets/css/backend.css" />
+        <link rel="stylesheet" href="assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" />
+        <link rel="stylesheet" href="assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css" />
+        <script src="https://kit.fontawesome.com/cdc4bf2522.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="assets/vendor/remixicon/fonts/remixicon.css" />
+        <link rel="stylesheet" href="https://foliotek.github.io/Croppie/croppie.css" />
+        <link rel="stylesheet" href="assets/css/select2.css" />
+        <link rel="stylesheet" href="assets/css/select2-bootstrap4.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css" />
+
+        <link href="https://cdn.jsdelivr.net/npm/cropperjs@1.5.12/dist/cropper.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <!-- Viewer Plugin -->
+        <link rel="stylesheet" href="assets/css/tiny-autocomplete.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" />
+        <link href="https://erp.unesync.com/assets/js/plugins/dropzone/css/dropzone.css" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css" />
+        <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    </head>
+    <body class="  " translate="no">
+        <!-- loader Start -->
+        <!-- <div id="loading">
+            <div id="loading-center"></div>
+        </div> -->
+        <!-- loader END -->
+        <!-- Wrapper Start -->
+        <div class="border"></div>
+        <div class="top_notch">
+            <div class="notch">
+                <button type="button" class="btn btn-secondary mt-2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tooltip on bottom">
+                    <iconify-icon icon="ph:info"></iconify-icon>
+                </button>
+                <h6>Practise Mode</h6>
+                <div class="pr_mode">
+                    <input id="pr_mode" type="checkbox" hidden="hidden" />
+                    <label class="switch" for="pr_mode"></label>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_notch">
+            <div class="notch">
+                <h6>Changes will not be saved in Practise Mode</h6>
+            </div>
+        </div>
+        <!-- <div class="prMode">
+            
+        </div> -->
+        <div class="wrapper">
+            <div class="iq-sidebar sidebar-default">
+                <div class="iq-sidebar-logo d-flex align-items-center justify-content-between advance_logo">
+                    <a href="#" class="dropdown-toggle circle-hover header-logo" id="dropdownMenuButton02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo" />
+                        <iconify-icon icon="bx:rotate-left"></iconify-icon>
+                        <!-- <img src="assets/images/logo-white.png" class="img-fluid rounded-normal darkmode-logo" alt="logo" /> -->
+                    </a>
+                    <div class="iq-sub-dropdown dropdown-menu advance_drop" aria-labelledby="dropdownMenuButton02">
+                        <div class="card shadow-none m-0">
+                            <div class="card-body p-0 notification_box">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="main_bus">
+                                            <div class="lside_p">
+                                                <span><img src="assets/images/logo.png" class="" alt="logo" /></span>
+                                                <h6>Unesync Ltd</h6>
+                                            </div>
+                                            <div class="rside_p">
+                                                <a href="#"><iconify-icon icon="ep:setting"></iconify-icon></a>
+                                            </div>
+                                        </div>
+                                        <label for="">Switch Business</label>
+                                        <div class="bu_list">
+                                            <div class="main_bus">
+                                                <a href="#">
+                                                    <div class="lside_p">
+                                                        <span><img src="assets/images/logo.png" class="" alt="logo" /></span>
+                                                        <h6>Unesync Ltd</h6>
+                                                    </div>
+                                                    <div class="rside_p">
+                                                        <iconify-icon icon="charm:tick"></iconify-icon>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="main_bus">
+                                                <a href="#">
+                                                    <div class="lside_p">
+                                                        <span><img src="assets/images/logo_crop.png" class="" alt="logo" /></span>
+                                                        <h6>Decimal Space</h6>
+                                                    </div>
+                                                    <div class="rside_p">
+                                                        <!-- <iconify-icon icon="charm:tick"></iconify-icon> -->
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="main_bus">
+                                            <button type="button" id="opencreatenewbusiness">
+                                                <div class="lside_p">
+                                                    <span class="animated tada"><iconify-icon icon="ic:round-add"></iconify-icon></span>
+                                                    <h6>Create New Business</h6>
+                                                </div>
+                                                <div class="rside_p">
+                                                    <!-- <iconify-icon icon="charm:tick"></iconify-icon> -->
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <a href="index.html" class="header-logo">
+                        <img src="assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo" />
+                        <img src="assets/images/logo-white.png" class="img-fluid rounded-normal darkmode-logo" alt="logo" />
+                    </a> -->
+                    <div class="iq-menu-bt-sidebar">
+                        <i class="las la-bars wrapper-menu"></i>
+                    </div>
+                </div>
+                <div class="data-scrollbar" data-scroll="1">
+                    <div class="new-create select-dropdown input-prepend input-append">
+                        <div class="btn-group">
+                            <label data-toggle="dropdown">
+                                <div class="search-query selet-caption">
+                                    <svg fill="#006AFF" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 45.402 45.402" xml:space="preserve">
+                                        <g>
+                                            <path
+                                                d="M41.267,18.557H26.832V4.134C26.832,1.851,24.99,0,22.707,0c-2.283,0-4.124,1.851-4.124,4.135v14.432H4.141
+                                            c-2.283,0-4.139,1.851-4.138,4.135c-0.001,1.141,0.46,2.187,1.207,2.934c0.748,0.749,1.78,1.222,2.92,1.222h14.453V41.27
+                                            c0,1.142,0.453,2.176,1.201,2.922c0.748,0.748,1.777,1.211,2.919,1.211c2.282,0,4.129-1.851,4.129-4.133V26.857h14.435
+                                            c2.283,0,4.134-1.867,4.133-4.15C45.399,20.425,43.548,18.557,41.267,18.557z"
+                                            />
+                                        </g>
+                                    </svg>
+                                    Create New
+                                </div>
+                                <span class="search-replace"></span>
+                                <span class="caret"><!--icon--></span>
+                            </label>
+                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">
+                                        <span class="bg_yellow squre_icon"><iconify-icon icon="tabler:brand-abstract"></iconify-icon></span><span>Clients & Vendors</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">Customer</a></li>
+                                        <li><a tabindex="-1" href="#">Vendor</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">
+                                        <span class="bg_green squre_icon"><iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon></span><span>Accounting</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="create-invoice.html">Invoices</a></li>
+                                        <li><a tabindex="-1" href="#">Banking</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">
+                                        <span class="bg_purple squre_icon"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon></span><span>Leads & Tickets</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">Form</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">
+                                        <span class="bg_red squre_icon"><iconify-icon icon="eos-icons:project-outlined"></iconify-icon></span><span>Projects</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">Timesheet</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">
+                                        <span class="bg_darkblu squre_icon"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon></span><span>Products & Inventory</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">Product</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">
+                                        <span class="bg_gray squre_icon"><iconify-icon icon="ic:twotone-warehouse"></iconify-icon></span><span>Warehouse</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">POSM</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <nav class="iq-sidebar-menu">
+                        <ul id="iq-sidebar-toggle" class="iq-menu">
+                            <li class="">
+                                <a href="index.html" class="">
+                                    <iconify-icon style="opacity: 0;" icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <span class="bg_blue squre_icon"><iconify-icon icon="tabler:home"></iconify-icon></span><span>Dashboard</span>
+                                </a>
+                                <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle"></ul>
+                            </li>
+                            <li class="">
+                                <a href="#mydrive" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                    <iconify-icon icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <iconify-icon icon="ic:baseline-arrow-drop-down" class="iq-arrow-right arrow-hover"></iconify-icon>
+                                    <span class="bg_yellow squre_icon"><iconify-icon icon="tabler:brand-abstract"></iconify-icon></span><span>Clients & Vendors</span>
+                                </a>
+                                <ul id="mydrive" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                    <li class="">
+                                        <a href="customer-management.html">
+                                            <span class="squre_icon"><iconify-icon icon="fluent-mdl2:recruitment-management"></iconify-icon></span><span>Customer management</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="vendor-management.html">
+                                            <span class="squre_icon"><iconify-icon icon="fluent-mdl2:recruitment-management"></iconify-icon></span><span>Vendor management</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="active">
+                                <a href="#accounting" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                    <iconify-icon icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <iconify-icon icon="ic:baseline-arrow-drop-down" class="iq-arrow-right arrow-hover"></iconify-icon>
+                                    <span class="bg_green squre_icon"><iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon></span><span>Accounting</span>
+                                </a>
+                                <ul id="accounting" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
+                                    <li class="">
+                                        <a href="invoice.html">
+                                            <span class="squre_icon"><iconify-icon icon="uil:invoice"></iconify-icon></span><span>Invoices</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="quotations-estimates.html">
+                                            <span class="squre_icon"><iconify-icon icon="fluent:payment-32-regular"></iconify-icon></span><span>Quotations & Estimates</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="performa-invoices.html">
+                                            <span class="squre_icon"><iconify-icon icon="ri:bank-line"></iconify-icon></span><span>Proforma Invoices</span>
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="expense-quick-expense.html">
+                                            <span class="squre_icon"><iconify-icon icon="ep:memo"></iconify-icon></span><span>Expense Management</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="payment-receipts.html">
+                                            <span class="squre_icon"><iconify-icon icon="ep:memo"></iconify-icon></span><span>Payment Receipts</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="purchase-order.html">
+                                            <span class="squre_icon"><iconify-icon icon="uil:bill"></iconify-icon></span><span>Purchase Orders</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="delivery-challans.html">
+                                            <span class="squre_icon"><iconify-icon icon="material-symbols:settings-account-box-outline"></iconify-icon></span><span>Delivery Challans</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="credit-note.html">
+                                            <span class="squre_icon"><iconify-icon icon="material-symbols:account-tree-outline-rounded"></iconify-icon></span><span>Credit Notes</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="debit-note.html">
+                                            <span class="squre_icon"><iconify-icon icon="material-symbols:payments-outline-rounded"></iconify-icon></span><span>Debit Notes</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="#products" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                    <iconify-icon icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <iconify-icon icon="ic:baseline-arrow-drop-down" class="iq-arrow-right arrow-hover"></iconify-icon>
+                                    <span class="bg_darkblu squre_icon"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon></span><span>Inventory & Warehouse</span>
+                                </a>
+                                <ul id="products" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                    <li class="">
+                                        <a href="products-inventory.html">
+                                            <span class="squre_icon"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon></span><span>Inventory</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon></span><span>Warehouse</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- <li class=" ">
+                                <a href="#leads" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                    <iconify-icon icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <iconify-icon icon="ic:baseline-arrow-drop-down" class="iq-arrow-right arrow-hover"></iconify-icon>
+                                    <span class="bg_purple squre_icon"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon></span><span>Leads & Tickets</span>
+                                </a>
+                                <ul id="leads" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon></span><span>Leads</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="mdi:deal-outline"></iconify-icon></span><span>Deals</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="clarity:form-line"></iconify-icon></span><span>Form Builder</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="material-symbols:system-update-alt"></iconify-icon></span><span>CRM system setup</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="carbon:cloud-service-management"></iconify-icon></span><span>Ticket management</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li> -->
+                            <!-- <li class=" ">
+                                <a href="#projects" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                    <iconify-icon icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <iconify-icon icon="ic:baseline-arrow-drop-down" class="iq-arrow-right arrow-hover"></iconify-icon>
+                                    <span class="bg_red squre_icon"><iconify-icon icon="eos-icons:project-outlined"></iconify-icon></span><span>Projects</span>
+                                </a>
+                                <ul id="projects" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="eos-icons:project-outlined"></iconify-icon></span><span>Projects</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="fe:list-task"></iconify-icon></span><span>Task</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="ic:round-more-time"></iconify-icon></span><span>Timesheet</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="material-symbols:calendar-month"></iconify-icon></span><span>Task Calendar</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="fluent-mdl2:trackers"></iconify-icon></span><span>Tracker</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="mdi:report-bell-curve"></iconify-icon></span><span>Project report</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="octicon:project-roadmap-24"></iconify-icon></span><span>Project system setup</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li> -->
+                        </ul>
+                    </nav>
+                    <div class="sidebar-addnew">
+                        <nav class="iq-sidebar-menu">
+                            <ul id="iq-sidebar-toggle" class="iq-menu">
+                                <li>
+                                    <a type="button" data-bs-toggle="offcanvas" href="#offcanvasFilter" role="button" aria-controls="offcanvasFilter">
+                                        <!-- <iconify-icon style="opacity: 0;" icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon> -->
+                                        <span class="squre_icon"><iconify-icon icon="material-symbols:add-rounded"></iconify-icon></span><span>Manage applications</span>
+                                    </a>
+                                    <ul id="page-files" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle"></ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="sidebar-bottom">
+                    <nav class="iq-sidebar-menu">
+                        <ul id="iq-sidebar-toggle" class="iq-menu">
+                            <li>
+                                <a href="empty-team-managment.html">
+                                    <iconify-icon style="opacity: 0;" icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <span class="bg_red squre_icon"><iconify-icon icon="fluent:people-team-16-regular"></iconify-icon></span><span>Team Management</span>
+                                </a>
+                                <ul id="page-files" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle"></ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="iq-top-navbar">
+                <div class="iq-navbar-custom">
+                    <nav class="navbar navbar-expand-lg navbar-light p-0">
+                        <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
+                            <i class="ri-menu-line wrapper-menu"></i>
+                            <a href="index.html" class="header-logo">
+                                <img src="assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo" />
+                                <img src="assets/images/logo-white.png" class="img-fluid rounded-normal darkmode-logo" alt="logo" />
+                            </a>
+                        </div>
+                        <div class="iq-search-bar device-search">
+                            <!-- <form>
+                                <div class="input-prepend input-append">
+                                    <div class="btn-group">
+                                        <label class="dropdown-toggle searchbox" data-toggle="dropdown">
+                                            <input class="dropdown-toggle search-query text search-input" type="text" placeholder="Type here to search..." /><span class="search-replace"></span>
+                                            <a class="search-link" href="#"><i class="ri-search-line"></i></a>
+                                            <span class="caret"></span>
+                                        </label>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item bg_yellow squre_icon"><iconify-icon icon="tabler:brand-abstract"></iconify-icon>Clients & Vendors</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item squre_icon bg_green"><iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon>Accounting</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item squre_icon bg_purple"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon>Leads & Tickets</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item squre_icon bg_red"><iconify-icon icon="eos-icons:project-outlined"></iconify-icon>Projects</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item squre_icon bg_darkblu"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon>Products & Inventory</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item squre_icon bg_gray"><iconify-icon icon="ic:twotone-warehouse"></iconify-icon>Warehouse</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item squre_icon bg_blue"><iconify-icon icon="fluent:people-team-16-regular"></iconify-icon>Team Management</div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form> -->
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <!-- <div class="change-mode">
+                                <div class="custom-control custom-switch custom-switch-icon custom-control-inline">
+                                    <div class="custom-switch-inner">
+                                        <p class="mb-0"></p>
+                                        <input type="checkbox" class="custom-control-input" id="dark-mode" data-active="true" />
+                                        <label class="custom-control-label" for="dark-mode" data-mode="toggle">
+                                            <span class="switch-icon-left"><i class="a-left"></i></span>
+                                            <span class="switch-icon-right"><i class="a-right"></i></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+                                <i class="ri-menu-3-line"></i>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto navbar-list align-items-center">
+                                    <li class="nav-item nav-icon search-content">
+                                        <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="ri-search-line"></i>
+                                        </a>
+                                        <div class="iq-search-bar iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownSearch">
+                                            <form action="#" class="searchbox p-2">
+                                                <div class="form-group mb-0 position-relative">
+                                                    <input type="text" class="text search-input font-size-12" placeholder="type here to search..." />
+                                                    <a href="#" class="search-link"><i class="las la-search"></i></a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                    <!-- <li class="nav-item nav-icon dropdown">
+                                        <a href="#" class="search-toggle dropdown-toggle circle-hover" id="dropdownMenuButton01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="ri-question-line"></i>
+                                        </a>
+                                        <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton01">
+                                            <div class="card shadow-none m-0">
+                                                <div class="card-body p-0">
+                                                    <a href="#" class="iq-sub-card pt-0"><i class="ri-questionnaire-line"></i>Help</a>
+                                                    <a href="#" class="iq-sub-card"><i class="ri-recycle-line"></i>Training</a>
+                                                    <a href="#" class="iq-sub-card"><i class="ri-refresh-line"></i>Updates</a>
+                                                    <a href="#" class="iq-sub-card"><i class="ri-service-line"></i>Terms and Policy</a>
+                                                    <a href="#" class="iq-sub-card"><i class="ri-feedback-line"></i>Send Feedback</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                    <li class="nav-item nav-icon dropdown notify">
+                                        <button class="search-toggle dropdown-toggle circle-hover" id="dropdownMenuButton02" data-bs-toggle="offcanvas" href="#offcanvasNotification" role="button" aria-controls="offcanvasNotification">
+                                            <i class="ri-notification-line"></i>
+                                            <div class="Canny_Badge">99</div>
+                                        </button>
+                                        <!-- <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton02">
+                                            <div class="card shadow-none m-0">
+                                                <div class="card-body p-0 notification_box">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <h4>Notifications</h4>
+                                                            <a href="#">Mark as All Read</a>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <a href="#">
+                                                                <div class="card-item">
+                                                                    <span class="bg_yellow squre_icon"><iconify-icon icon="tabler:brand-abstract"></iconify-icon></span>
+                                                                    <div class="item-text">
+                                                                        <h3>New Invoice Generated</h3>
+                                                                        <p>2m ago</p>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#">
+                                                                <div class="card-item">
+                                                                    <span class="bg_green squre_icon"><iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon></span>
+                                                                    <div class="item-text">
+                                                                        <h3>New Password created</h3>
+                                                                        <p>2m ago</p>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#">
+                                                                <div class="card-item">
+                                                                    <span class="bg_purple squre_icon"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon></span>
+                                                                    <div class="item-text">
+                                                                        <h3>Your password has been saved.</h3>
+                                                                        <p>2m ago</p>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <a href="#">View all notifications</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </li>
+                                    <li class="nav-item nav-icon dropdown setting_drop">
+                                        <a href="#" class="search-toggle dropdown-toggle circle-hover" id="dropdownMenuButton02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="ri-settings-3-line"></i>
+                                        </a>
+                                        <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton02">
+                                            <div class="card shadow-none m-0">
+                                                <div class="card-body p-0">
+                                                    <div class="p-3">
+                                                        <!-- <a href="#" for="emailnotification" class="iq-sub-card pt-0 d-align">
+                                                            <span><iconify-icon icon="icon-park-outline:dark-mode"></iconify-icon> Dark Mode</span>
+                                                            <div class="change-mode">
+                                                                <div class="custom-control custom-switch custom-switch-icon custom-control-inline">
+                                                                    <div class="custom-switch-inner">
+                                                                        <p class="mb-0"></p>
+                                                                        <input type="checkbox" class="custom-control-input" id="dark-mode" data-active="true" />
+                                                                        <label class="custom-control-label" for="dark-mode" data-mode="toggle">
+                                                                            <span class="switch-icon-left"><i class="a-left"></i></span>
+                                                                            <span class="switch-icon-right"><i class="a-right"></i></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a> -->
+                                                        <a href="#" for="emailnotification" class="iq-sub-card pt-0 d-align">
+                                                            <span><iconify-icon icon="ic:baseline-mode-standby"></iconify-icon> Practice Mode</span>
+                                                            <div class="pr-mode">
+                                                                <input id="pr_mode" type="checkbox" hidden="hidden" />
+                                                                <label class="switch" for="pr_mode"></label>
+                                                            </div>
+                                                        </a>
+                                                        <a href="team-member.html" class="iq-sub-card pt-0 tm_bar" data-toggle="modal" data-target="#teamPopup" type="button"> <iconify-icon icon="fluent:people-team-16-regular"></iconify-icon> Team Management </a>
+                                                        <a href="settings.html" class="iq-sub-card pt-0"> <i class="ri-settings-3-line"></i> Business settings </a>
+                                                        <a href="settings.html" class="iq-sub-card pt-0"> <i class="ri-settings-3-line"></i> Account settings </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item nav-icon dropdown apps">
+                                        <a href="#" class="search-toggle dropdown-toggle circle-hover" id="dropdownMenuButton03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <iconify-icon icon="material-symbols:apps"></iconify-icon>
+                                        </a>
+                                        <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton03">
+                                            <div class="card mb-0">
+                                                <div class="card-body wspace">
+                                                    <div class="icons-container">
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_yellow squre_icon">
+                                                                <iconify-icon icon="tabler:brand-abstract"></iconify-icon>
+                                                            </span>
+                                                            <span>Clients & Vendors</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_green squre_icon">
+                                                                <iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon>
+                                                            </span>
+                                                            <span>Accounting</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_purple squre_icon">
+                                                                <iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon>
+                                                            </span>
+                                                            <span>Leads & Tickets</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_red squre_icon">
+                                                                <iconify-icon icon="eos-icons:project-outlined"></iconify-icon>
+                                                            </span>
+                                                            <span>Projects</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_darkblu squre_icon">
+                                                                <iconify-icon icon="icon-park-outline:ad-product"></iconify-icon>
+                                                            </span>
+                                                            <span>Products & Inventory</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_gray squre_icon">
+                                                                <iconify-icon icon="ic:twotone-warehouse"></iconify-icon>
+                                                            </span>
+                                                            <span>Warehouse</span>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="divider"></div>
+
+                                                    <div class="icons-container">
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_orange squre_icon">
+                                                                <iconify-icon icon="fluent:people-team-16-regular"></iconify-icon>
+                                                            </span>
+                                                            <span>Team Management</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_dpurple squre_icon">
+                                                                <iconify-icon icon="ri:apps-2-line"></iconify-icon>
+                                                            </span>
+                                                            <span>Manage Application</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_light_Y squre_icon">
+                                                                <iconify-icon icon="iconoir:profile-circle"></iconify-icon>
+                                                            </span>
+                                                            <span>User Profile</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item nav-icon dropdown caption-content account_box">
+                                        <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <div class="caption profile-blue line-height">MJ</div>
+                                        </a>
+                                        <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton03">
+                                            <div class="card mb-0">
+                                                <div class="card-header d-flex justify-content-between mb-0">
+                                                    <div class="media my_media">
+                                                        <div class="rounded-circle iq-card-icon-small profile-green">
+                                                            MJ
+                                                        </div>
+                                                        <div class="media-body ml-3">
+                                                            <div class="media justify-content-between">
+                                                                <h6 class="mb-0">Mo. Jafar</h6>
+                                                            </div>
+                                                            <p class="mb-0 font-size-12">9898 059598</p>
+                                                        </div>
+                                                    </div>
+                                                    <a href="user-settings.html">User Settings</a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="profile-header">
+                                                        <div class="profile-details mt-4 pt-4 border-top"></div>
+                                                        <a href="#" class="account">
+                                                            <div class="media align-items-center">
+                                                                <div class="rounded-circle iq-card-icon-small profile-yellow">
+                                                                    US
+                                                                </div>
+                                                                <div class="media-body ml-2">
+                                                                    <div class="media justify-content-between">
+                                                                        <h6 class="mb-0">Unesync</h6>
+                                                                        <p class="mb-0 font-size-12"><i>Active</i></p>
+                                                                    </div>
+                                                                    <!-- <p class="mb-0 font-size-12">9898 059598</p> -->
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="account">
+                                                            <div class="media align-items-center">
+                                                                <div class="rounded-circle iq-card-icon-small profile-red">
+                                                                    DS
+                                                                </div>
+                                                                <div class="media-body ml-2">
+                                                                    <div class="media justify-content-between">
+                                                                        <h6 class="mb-0">Decimal Space</h6>
+                                                                        <p class="mb-0 font-size-12"><i></i></p>
+                                                                    </div>
+                                                                    <!-- <p class="mb-0 font-size-12">9898 059598</p> -->
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="profile-details mt-2 pt-4 border-top"></div>
+                                                        <div class="st_menu">
+                                                            <a href="#" class="standerd_menu"> <iconify-icon icon="material-symbols:add-rounded"></iconify-icon>&nbsp;&nbsp;&nbsp; Create New Business </a>
+                                                            <a href="#" class="standerd_menu tm">
+                                                                <iconify-icon icon="fluent:people-team-16-regular"></iconify-icon>
+                                                                Team Management
+                                                            </a>
+                                                            <a href="#" class="standerd_menu">
+                                                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false" class="NMm5M">
+                                                                    <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"></path>
+                                                                    <path d="M0 0h24v24H0z" fill="none"></path>
+                                                                </svg>
+                                                                Sign out
+                                                            </a>
+                                                        </div>
+                                                        <div class="termsand">
+                                                            <a target="_blank" href="#">Privacy Policy</a>
+                                                            <span class="OtBgcb">&nbsp;•&nbsp;</span>
+                                                            <a target="_blank" href="#">Terms of Service</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="content-page gray_bg">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 flush">
+                            <div class="the_mini_header">
+                                <div class="page_head forinvoice">
+                                    <div class="actions_bar">
+                                        <div class="filter_main">
+                                            <ul class="main_steps">
+                                                <li class="active">
+                                                    <span>1</span>
+                                                    <p>Expense Details</p>
+                                                </li>
+                                                <li class="">
+                                                    <span>2</span>
+                                                    <p>Mark Payments</p>
+                                                </li>
+                                                <li>
+                                                    <span>3</span>
+                                                    <p>Select Design & Colors</p>
+                                                </li>
+                                            </ul>
+                                            <!-- <span class="bg_darkblu squre_icon"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon></span> -->
+                                            <!-- <select class="ddl-select" id="listc1" name="list">
+                                                <option value="1">All Categories (10)</option>
+                                                <option value="2">Shirts (5)</option>
+                                                <option value="2">T-shirts (5)</option>
+                                            </select> -->
+                                        </div>
+                                        <!-- <div class="action_btns">
+                                            <button type="button" id="opencibsp">Convert E-Invoice</button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="main_wrapper" class="forinvoice">
+                                <div class="content_page">
+                                    <div class="bankDetails">
+                                        <!-- <h3>Expense</h3> -->
+                                        <div class="title_text show">
+                                            <h3>Quick Expense</h3>
+                                        </div>
+                                        <div class="form_details bankdetails show">
+                                            <div class="row">
+                                                <div class="form-group col-sm-6 ex_date">
+                                                    <label>
+                                                        <input type="text" class="datepickerex" autocomplete="off"
+                                                        value="" placeholder="Expense Date">
+                                                        <span>Expense Date</span>
+                                                    </label>    
+                                                    <button class="datepicker-buttonex" type="button"><svg width="16"
+                                                        height="16" viewBox="0 0 24 24" fill="none" color="#000"
+                                                        stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.55556 6.44444V2V6.44444ZM16.4444 6.44444V2V6.44444ZM6.44444 10.8889H17.5556H6.44444ZM4.22222 22H19.7778C21.0051 22 22 21.0051 22 19.7778V6.44444C22 5.21714 21.0051 4.22222 19.7778 4.22222H4.22222C2.99492 4.22222 2 5.21714 2 6.44444V19.7778C2 21.0051 2.99492 22 4.22222 22Z"
+                                                            stroke-linecap="round" stroke-width="2px"
+                                                            stroke-linejoin="round"></path>
+                                                    </svg></button>                                                
+                                                </div>
+                                                <div class="form-group col-sm-6">
+                                                    <div class="select-full">
+                                                        <select class="js-example-placeholder-single-country">
+                                                            <option value="0" selected>Select Vendor</option>
+                                                            <option value="1">Google</option>
+                                                            <option value="2">Quora</option>
+                                                            <option value="3">Lite</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-sm-6">
+                                                    <label>
+                                                        <input type="text" placeholder="Expense Number">
+                                                        <span>Expense Number</span>
+                                                    </label> 
+                                                </div>
+                                                <div class="form-group col-sm-6">
+                                                    <label>
+                                                        <input type="text" placeholder="Invoice Number">
+                                                        <span>Invoice Number</span>
+                                                    </label> 
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-sm-6">
+                                                    <div class="select-full">
+                                                        <select class="js-example-placeholder-single-currency">
+                                                            <!-- <option value="0" selected>Select Currency</option> -->
+                                                            <option value="1">Indian Rupee(INR, ₹)</option>
+                                                            <option value="2">US Dollar(USD, $)</option>
+                                                            <option value="3">United Arab Emirates Dirham(AED, AED)</option>
+                                                            <option value="1">Ugandan Shilling(UGX, USh)</option>
+                                                            <option value="2">Turkmenistan(TMT, T)</option>
+                                                            <option value="3">Uzbekistan Som(UZS, UZS)</option>
+                                                        </select>
+                                                    </div> 
+                                                </div>
+                                                <div class="form-group col-sm-6">
+                                                    <label>
+                                                        <input type="text" placeholder="Amount Spent">
+                                                        <span>Amount Spent</span>
+                                                    </label> 
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-sm-12">
+                                                    <label>
+                                                        <textarea placeholder="Notes"></textarea>
+                                                        <span>Notes</span>
+                                                    </label> 
+                                                </div>
+                                                <div class="form-group col-sm-12 attech">
+                                                    <h3>Attachments</h3>
+                                                    <p>*Attachments can be viewed only via the link in shared document. Not via PDF.</p>
+                                                    <div cols="20" class="hide_option_imageOnly two_op">
+                                                        <div class="upload__box">
+                                                            <div class="upload__img-wrap"></div>
+                                                            <div class="upload__btn-box">
+                                                                <label class="upload__btn">
+                                                                    <p><iconify-icon icon="ion:add"></iconify-icon> Upload</p>
+                                                                    <input type="file" multiple="" data-max_length="20"
+                                                                        class="upload__inputfile">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button aria-label="Add Thumbnail" class="openthumbnails opetwo"
+                                                        type="button">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            viewBox="0 0 16.072 16">
+                                                            <g id="image" transform="translate(0.495 0.495)">
+                                                                <rect id="Rectangle_1144" data-name="Rectangle 1144"
+                                                                    width="16" height="16"
+                                                                    transform="translate(-0.495 -0.495)" fill="none"
+                                                                    opacity="0"></rect>
+                                                                <g id="Rectangle_771" data-name="Rectangle 771"
+                                                                    transform="translate(-0.495 -0.495)" fill="none"
+                                                                    stroke="#006AFF" stroke-linecap="round"
+                                                                    stroke-linejoin="round" stroke-width="1">
+                                                                    <rect width="16" height="16" rx="2" stroke="none">
+                                                                    </rect>
+                                                                    <rect x="0.5" y="0.5" width="15" height="15" rx="1.5"
+                                                                        fill="none"></rect>
+                                                                </g>
+                                                                <circle id="Ellipse_275" data-name="Ellipse 275" cx="1.5"
+                                                                    cy="1.5" r="1.5" transform="translate(3.505 3.505)"
+                                                                    fill="none" stroke="#006AFF" stroke-linecap="round"
+                                                                    stroke-linejoin="round" stroke-width="1"></circle>
+                                                                <path id="Path_1674" data-name="Path 1674"
+                                                                    d="M19.587,14.614,14.973,10,5.426,19.6"
+                                                                    transform="translate(-4.718 -4.902)" fill="none"
+                                                                    stroke="#006AFF" stroke-linecap="round"
+                                                                    stroke-linejoin="round" stroke-width="1"></path>
+                                                            </g>
+                                                        </svg>
+                                                        Upload
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="page_button">
+                                        <button type="button" class="save_bank_details">Save Bank Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Due Date Popup -->
+        <div class="modal fade twoside_modal" id="duedate" tabindex="-1" role="dialog" aria-labelledby="duedateLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                    </button>
+                    <div class="modal-body">
+                        <div class="setup_wrapper">
+                            <h2>Set a Due Date</h2>
+
+                            <div class="inner_model_wrapper">
+                                
+                                <div class="dudate_seter">
+                                    <span>Set due date to</span>
+                                    <input type="number" name="" id="">
+                                    <span>days after Invoice date</span>
+                                </div>
+
+                                <div class="com_action">
+                                    <button class="nobgc" data-dismiss="modal" aria-label="Close">Cancel</button>
+                                    <button class="click_next">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bill By Edit Popup -->
+        <div class="modal fade twoside_modal" id="billbyedit" tabindex="-1" role="dialog" aria-labelledby="billbyeditLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                    </button>
+                    <div class="modal-body">
+                        <div class="setup_wrapper">
+                            <h2>Business Details</h2>
+
+                            <div class="inner_model_wrapper">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Basic Information
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="comn_card">
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" value="Unesync">
+                                                                <label for="name">Client's Business Name</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="select-full">
+                                                                <select class="js-example-placeholder-single-country">
+                                                                    <option value="0" selected>Select Country</option>
+                                                                    <option value="1">India</option>
+                                                                    <option value="2">Canada</option>
+                                                                    <option value="3">London</option>
+                                                                    <option value="1">India</option>
+                                                                    <option value="2">Canada</option>
+                                                                    <option value="3">London</option>
+                                                                    <option value="1">India</option>
+                                                                    <option value="2">Canada</option>
+                                                                    <option value="3">London</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" />
+                                                                <label for="name">City</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Tax Information <span>(optional)</span>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="comn_card">
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" value="">
+                                                                <label for="name">Business GSTIN</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" value="">
+                                                                <label for="name">Business PAN Number</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Address <span>(optional)</span>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="comn_card">
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="select-full">
+                                                                <select class="js-example-placeholder-single-country">
+                                                                    <option value="0" selected>Select Country</option>
+                                                                    <option value="1">India</option>
+                                                                    <option value="2">Canada</option>
+                                                                    <option value="3">London</option>
+                                                                    <option value="1">India</option>
+                                                                    <option value="2">Canada</option>
+                                                                    <option value="3">London</option>
+                                                                    <option value="1">India</option>
+                                                                    <option value="2">Canada</option>
+                                                                    <option value="3">London</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="select-full">
+                                                                <select class="js-example-placeholder-single-state">
+                                                                    <option value="0" selected>Select State</option>
+                                                                    <option value="1">Gujarat</option>
+                                                                    <option value="2">Bihar</option>
+                                                                    <option value="3">Andhra Pradesh</option>
+                                                                    <option value="3">Chandigarh</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" />
+                                                                <label for="name">City</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" />
+                                                                <label for="name">Postal Code / Zip Code</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" />
+                                                                <label for="name">Street Address</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                Additional Details <span>(optional)</span>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="comn_card">
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="email" required="" id="" value="">
+                                                                <label for="name">Email</label>
+                                                            </div>
+                                                            <div class="sd_check">
+                                                                <input type="checkbox" name="layout" id="saad">
+                                                                <label class="pull-right text" for="saad">Show Email in Invoice</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-sm-6 cpnumber">
+                                                            <div class="inputGroup phone">
+                                                                <input type="text" required="" id="phone">
+                                                                <label for="name">Phone Number</label>
+                                                            </div>
+                                                            <p>+91</p>
+                                                            <div class="sd_check">
+                                                                <input type="checkbox" name="layout" id="saad1">
+                                                                <label class="pull-right text" for="saad1">Show Phone in Invoice</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="com_action">
+                                    <div class="sd_check">
+                                        <input type="checkbox" name="layout" id="saad2">
+                                        <label class="pull-right text" for="saad2">Update current changes for all existing invoices of this business.</label>
+                                    </div>
+                                    <button class="">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bill to Edit Popup -->
+        <div class="modal fade twoside_modal" id="billtoedit" tabindex="-1" role="dialog" aria-labelledby="billtoeditLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                    </button>
+                    <div class="modal-body">
+                        <div class="setup_wrapper">
+                            <h2>Edit Client Details</h2>
+
+                            <div class="inner_model_wrapper">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingFive">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                                Basic Information
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="comn_card">
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" value="ewfewf">
+                                                                <label for="name">Client's Business Name</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="select-full">
+                                                                <select class="js-example-placeholder-single-industry">
+                                                                    <option value="0" selected>Select an Industry</option>
+                                                                    <option value="1">Fashion</option>
+                                                                    <option value="2">Education</option>
+                                                                    <option value="3">FMCG</option>
+                                                                    <option value="1">IT & ITes</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="select-full">
+                                                                <select class="js-example-placeholder-single-country">
+                                                                    <option value="0" selected>Select Country</option>
+                                                                    <option value="1">India</option>
+                                                                    <option value="2">Canada</option>
+                                                                    <option value="3">London</option>
+                                                                    <option value="1">India</option>
+                                                                    <option value="2">Canada</option>
+                                                                    <option value="3">London</option>
+                                                                    <option value="1">India</option>
+                                                                    <option value="2">Canada</option>
+                                                                    <option value="3">London</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" />
+                                                                <label for="name">City</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingSix">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                                Tax Information <span>(optional)</span>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="comn_card">
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" value="">
+                                                                <label for="name">Business GSTIN</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" value="">
+                                                                <label for="name">Business PAN Number</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingSeven">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                                Address <span>(optional)</span>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="comn_card">
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="select-full">
+                                                                <select class="js-example-placeholder-single-country">
+                                                                    <option value="1">India</option>
+                                                                    <option value="2">Canada</option>
+                                                                    <option value="3">London</option>
+                                                                    <option value="1">India</option>
+                                                                    <option value="2">Canada</option>
+                                                                    <option value="3">London</option>
+                                                                    <option value="1">India</option>
+                                                                    <option value="2">Canada</option>
+                                                                    <option value="3">London</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="select-full">
+                                                                <select class="js-example-placeholder-single-state">
+                                                                    <option value="1">Gujarat</option>
+                                                                    <option value="2">Bihar</option>
+                                                                    <option value="3">Andhra Pradesh</option>
+                                                                    <option value="3">Chandigarh</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" />
+                                                                <label for="name">City</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" />
+                                                                <label for="name">Postal Code / Zip Code</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" />
+                                                                <label for="name">Street Address</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingEight">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                                Additional Details <span>(optional)</span>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="comn_card">
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12">
+                                                            <div class="inputGroup">
+                                                                <input type="text" required="" id="" value="1675068529762">
+                                                                <label for="name">Unique Key</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-6">
+                                                            <div class="inputGroup">
+                                                                <input type="email" required="" id="" value="">
+                                                                <label for="name">Email</label>
+                                                            </div>
+                                                            <div class="sd_check">
+                                                                <input type="checkbox" name="layout" id="saad">
+                                                                <label class="pull-right text" for="saad">Show Email in Invoice</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-sm-6 cpnumber">
+                                                            <div class="inputGroup phone">
+                                                                <input type="text" required="" id="phone">
+                                                                <label for="name">Phone Number</label>
+                                                            </div>
+                                                            <p>+91</p>
+                                                            <div class="sd_check">
+                                                                <input type="checkbox" name="layout" id="saad1">
+                                                                <label class="pull-right text" for="saad1">Show Phone in Invoice</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="com_action">
+                                    <div class="sd_check">
+                                        <input type="checkbox" name="layout" id="saad2">
+                                        <label class="pull-right text" for="saad2">Update current changes for all existing invoices of this business.</label>
+                                    </div>
+                                    <button class="">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Change GST Popup -->
+        <div class="modal fade twoside_modal" id="changeGst" tabindex="-1" role="dialog" aria-labelledby="changeGstLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                    </button>
+                    <div class="modal-body">
+                        <div class="setup_wrapper">
+                            <h2>Configure Tax</h2>
+
+                            <div class="inner_model_wrapper">
+                                <select class="js-example-placeholder-single-taxtype">
+                                    <option value="" selected>Select Tax Type</option>
+                                    <option value="1">GST (India)</option>
+                                    <option value="2">VAT</option>
+                                    <option value="2">PPN</option>
+                                </select>
+                                <div class="gst_option">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                                        <label class="form-check-label" for="flexRadioDefault4">
+                                            IGST
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" checked="">
+                                        <label class="form-check-label" for="flexRadioDefault5">
+                                            CGST &amp; SGST
+                                        </label>
+                                    </div>
+                                </div>
+                                <span>You are billing to a Non-GST Registered client</span>
+                                <div class="com_action">
+                                    <button class="nobgc" data-dismiss="modal" aria-label="Close">Cancel</button>
+                                    <button class="click_next">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Change Number Format Popup -->
+        <div class="modal fade twoside_modal" id="changenumberformat" tabindex="-1" role="dialog" aria-labelledby="changenumberformatLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                    </button>
+                    <div class="modal-body">
+                        <div class="setup_wrapper">
+                            <h2>Change Number Format</h2>
+
+                            <div class="inner_model_wrapper">
+                                <p>Change between Roman and Arabic number systems. Million vs. Lakhs.</p>
+                                <span>Select Number Format</span>
+                                <div class="number_wrap">
+                                    <input type="radio" name="select" id="option-1" checked />
+                                    <input type="radio" name="select" id="option-2" />
+                                    <label for="option-1" class="option option-1">
+                                        <div class="dot"></div>
+                                        <span>India - English (Lakhs)<br/><h6>₹1,23,45,679</h6></span>
+                                    </label>
+                                    <label for="option-2" class="option option-2">
+                                        <div class="dot"></div>
+                                        <span>United States - English (Millions)<br/><h6>₹12,345,679</h6></span>
+                                    </label>
+                                </div>  
+                                <div class="select-full">
+                                    <select class="js-example-placeholder-single-country">
+                                        <option value="1">India</option>
+                                        <option value="2">Canada</option>
+                                        <option value="3">London</option>
+                                        <option value="1">India</option>
+                                        <option value="2">Canada</option>
+                                        <option value="3">London</option>
+                                        <option value="1">India</option>
+                                        <option value="2">Canada</option>
+                                        <option value="3">London</option>
+                                    </select>
+                                </div> 
+                                <span>Select Decimal Digits</span>
+                                <div class="number_wrap digital">
+                                    <input type="radio" name="select1" id="option-3" checked />
+                                    <label for="option-3" class="option option-3">
+                                        <div class="dot"></div>
+                                        <span>None</span>
+                                    </label>
+                                    <input type="radio" name="select1" id="option-4" />
+                                    <label for="option-4" class="option option-4">
+                                        <div class="dot"></div>
+                                        <span>99</span>
+                                    </label>
+
+                                    <input type="radio" name="select1" id="option-5" />
+                                    <label for="option-5" class="option option-5">
+                                        <div class="dot"></div>
+                                        <span>99.0</span>
+                                    </label>
+                                    <input type="radio" name="select1" id="option-6" />
+                                    <label for="option-6" class="option option-6">
+                                        <div class="dot"></div>
+                                        <span>99.00</span>
+                                    </label>
+                                </div> 
+                                <div class="row">
+                                    <div class="form-group col-sm-12">
+                                        <div class="inputGroup">
+                                            <input type="text" required="" id="" value="">
+                                            <label for="name">Add Custom Currency Symbol</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="com_action">
+                                    <button class="nobgc" data-dismiss="modal" aria-label="Close">Cancel</button>
+                                    <button class="click_next">Save Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Columns Popup -->
+        <div class="modal fade twoside_modal" id="editcolumns" tabindex="-1" role="dialog" aria-labelledby="editcolumnsLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                    </button>
+                    <div class="modal-body">
+                        <div class="setup_wrapper">
+                            <h2>Edit Columns</h2>
+
+                            <div class="inner_model_wrapper">
+                                <p>Add new fields or Edit name of fields in the invoice. Use this to add fields like units, hours, service/product specification etc. Also, private columns are not visible to clients and are not part of pdf.</p>
+                                
+                                <div class="btn_sec">
+                                    <button type="button" class="addnewcolumnbtn">
+                                        <svg stroke="#8C14FC" fill="#006AFF" stroke-width="0" viewBox="0 0 512 512" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+                                            ></path>
+                                        </svg>
+                                        Add New Column
+                                    </button>
+                                </div>                                
+
+                                <div class="columns">
+                                    <div class="col_head">
+                                        <ul>
+                                            <li></li>
+                                            <li>Column Name</li>
+                                            <li>Column Type</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col_line">
+                                        <div class="space_grag">
+                                            <!-- <iconify-icon icon="ic:twotone-drag-indicator"></iconify-icon> -->
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="inputGroup">
+                                                <input type="text" required="" id="" value="">
+                                                <label for="name">Item</label>
+                                            </div>
+                                        </div>
+                                        <div class="select_wr">
+                                            <select class="js-states form-control nosearch">
+                                                <option value="">TEXT</option>
+                                                <option value="">NUMBER</option>
+                                            </select>
+                                        </div>
+                                        <div class="action_btns">
+                                            <button class="hide"><iconify-icon icon="ph:eye"></iconify-icon> Hide</button>
+                                            <button class="unhide"><iconify-icon icon="ph:eye-slash"></iconify-icon> Unhide</button>
+                                        </div>
+                                    </div>
+                                    <div id="sortable-list">
+                                        <div class="col_line no-swipe add_new_column">
+                                            <div class="space_grag handle instant">
+                                                <iconify-icon icon="ic:twotone-drag-indicator"></iconify-icon>
+                                            </div>
+                                            <div class="withprivet">
+                                                <div class="form-group">
+                                                    <div class="inputGroup">
+                                                        <input type="text" required="" id="" value="">
+                                                        <label for="name">Item</label>
+                                                    </div>
+                                                </div>
+                                                <div class="sd_check">
+                                                    <input type="checkbox" name="layout" id="private"> 
+                                                    <label class="pull-right text" for="private">Make private?</label>
+                                                </div>
+                                            </div>
+                                            <div class="select_wr">
+                                                <select class="js-states form-control nosearch">
+                                                    <option value="">TEXT</option>
+                                                    <option value="">NUMBER</option>
+                                                </select>
+                                            </div>
+                                            <div class="action_btns">
+                                                <button class="hide"><iconify-icon icon="ph:eye"></iconify-icon> Hide</button>
+                                                <button class="unhide"><iconify-icon icon="ph:eye-slash"></iconify-icon> Unhide</button>
+                                                <button class="remove"><iconify-icon icon="mingcute:delete-2-line"></iconify-icon> Remove</button>
+                                            </div>
+                                        </div>
+                                        <div class="col_line no-swipe">
+                                            <div class="space_grag handle instant">
+                                                <iconify-icon icon="ic:twotone-drag-indicator"></iconify-icon>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="inputGroup">
+                                                    <input type="text" required="" id="" value="">
+                                                    <label for="name">Item</label>
+                                                </div>
+                                            </div>
+                                            <div class="select_wr">
+                                                <select class="js-states form-control nosearch">
+                                                    <option value="">TEXT</option>
+                                                    <option value="">NUMBER</option>
+                                                </select>
+                                            </div>
+                                            <div class="action_btns">
+                                                <button class="hide"><iconify-icon icon="ph:eye"></iconify-icon> Hide</button>
+                                                <button class="unhide"><iconify-icon icon="ph:eye-slash"></iconify-icon> Unhide</button>
+                                            </div>
+                                        </div>
+                                        <div class="col_line no-swipe">
+                                            <div class="space_grag handle instant">
+                                                <iconify-icon icon="ic:twotone-drag-indicator"></iconify-icon>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="inputGroup">
+                                                    <input type="text" required="" id="" value="">
+                                                    <label for="name">Item</label>
+                                                </div>
+                                            </div>
+                                            <div class="select_wr">
+                                                <select class="js-states form-control nosearch">
+                                                    <option value="">TEXT</option>
+                                                    <option value="">NUMBER</option>
+                                                </select>
+                                            </div>
+                                            <div class="action_btns">
+                                                <button class="hide"><iconify-icon icon="ph:eye"></iconify-icon> Hide</button>
+                                                <button class="unhide"><iconify-icon icon="ph:eye-slash"></iconify-icon> Unhide</button>
+                                            </div>
+                                        </div>
+                                        <div class="col_line no-swipe">
+                                            <div class="space_grag handle instant">
+                                                <iconify-icon icon="ic:twotone-drag-indicator"></iconify-icon>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="inputGroup">
+                                                    <input type="text" required="" id="" value="">
+                                                    <label for="name">Item</label>
+                                                </div>
+                                            </div>
+                                            <div class="select_wr">
+                                                <select class="js-states form-control nosearch">
+                                                    <option value="">TEXT</option>
+                                                    <option value="">NUMBER</option>
+                                                </select>
+                                            </div>
+                                            <div class="action_btns">
+                                                <button class="hide"><iconify-icon icon="ph:eye"></iconify-icon> Hide</button>
+                                                <button class="unhide"><iconify-icon icon="ph:eye-slash"></iconify-icon> Unhide</button>
+                                            </div>
+                                        </div>
+                                        <div class="col_line no-swipe">
+                                            <div class="space_grag handle instant">
+                                                <iconify-icon icon="ic:twotone-drag-indicator"></iconify-icon>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="inputGroup">
+                                                    <input type="text" required="" id="" value="">
+                                                    <label for="name">Item</label>
+                                                </div>
+                                            </div>
+                                            <div class="select_wr">
+                                                <select class="js-states form-control nosearch">
+                                                    <option value="">TEXT</option>
+                                                    <option value="">NUMBER</option>
+                                                </select>
+                                            </div>
+                                            <div class="action_btns">
+                                                <button class="hide"><iconify-icon icon="ph:eye"></iconify-icon> Hide</button>
+                                                <button class="unhide"><iconify-icon icon="ph:eye-slash"></iconify-icon> Unhide</button>
+                                            </div>
+                                        </div>
+                                        <div class="col_line no-swipe">
+                                            <div class="space_grag handle instant">
+                                                <iconify-icon icon="ic:twotone-drag-indicator"></iconify-icon>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="inputGroup">
+                                                    <input type="text" required="" id="" value="">
+                                                    <label for="name">Item</label>
+                                                </div>
+                                            </div>
+                                            <div class="select_wr">
+                                                <select class="js-states form-control nosearch">
+                                                    <option value="">TEXT</option>
+                                                    <option value="">NUMBER</option>
+                                                </select>
+                                            </div>
+                                            <div class="action_btns">
+                                                <button class="hide"><iconify-icon icon="ph:eye"></iconify-icon> Hide</button>
+                                                <button class="unhide"><iconify-icon icon="ph:eye-slash"></iconify-icon> Unhide</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="show_table_head">
+                                    <div cols="22" class="thead">
+                                        <span class="th-b six-s">Item</span>
+                                        <span class="th-b two-s">HSN/SAC</span>
+                                        <span class="th-b two-s">GST</span>
+                                        <span class="th-b two-s">Quantity</span>
+                                        <span class="th-b two-s">Rate</span>
+                                        <span class="th-b two-s">Amount</span>
+                                        <span class="th-b two-s">CGST</span>
+                                        <span class="th-b two-s">SGST</span>
+                                        <span class="th-b two-s">Total</span>
+                                    </div>
+                                </div>
+
+                                <div class="com_action">
+                                    <button class="nobgc" data-dismiss="modal" aria-label="Close">Cancel</button>
+                                    <button class="click_next">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Wrapper End-->
+        <!-- <footer class="iq-footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item"><a href="backend/privacy-policy.html">Privacy Policy</a></li>
+                            <li class="list-inline-item"><a href="backend/terms-of-service.html">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 text-right">Copyright 2020 <a href="#">CloudBOX</a> All Rights Reserved.</div>
+                </div>
+            </div>
+        </footer> -->
+        <!-- Backend Bundle JavaScript -->
+        <script src="assets/js/backend-bundle.min.js"></script>
+
+        <script src="assets/js/main-custom.js"></script>
+
+        <!-- Chart Custom JavaScript -->
+        <script src="assets/js/customizer.js"></script>
+
+        <!-- Chart Custom JavaScript -->
+        <script src="assets/js/chart-custom.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js" integrity="sha256-AFAYEOkzB6iIKnTYZOdUf9FFje6lOTYdwRJKwTN5mks=" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+        <!--PDF-->
+        <script src="assets/vendor/doc-viewer/include/pdf/pdf.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <!--Docs-->
+        <script src="assets/vendor/doc-viewer/include/docx/jszip-utils.js"></script>
+        <script src="assets/vendor/doc-viewer/include/docx/mammoth.browser.min.js"></script>
+        <!--PPTX-->
+        <script src="assets/vendor/doc-viewer/include/PPTXjs/js/filereader.js"></script>
+        <script src="assets/vendor/doc-viewer/include/PPTXjs/js/d3.min.js"></script>
+        <script src="assets/vendor/doc-viewer/include/PPTXjs/js/nv.d3.min.js"></script>
+        <script src="assets/vendor/doc-viewer/include/PPTXjs/js/pptxjs.js"></script>
+        <script src="assets/vendor/doc-viewer/include/PPTXjs/js/divs2slides.js"></script>
+        <!--All Spreadsheet -->
+        <script src="assets/vendor/doc-viewer/include/SheetJS/handsontable.full.min.js"></script>
+        <script src="assets/vendor/doc-viewer/include/SheetJS/xlsx.full.min.js"></script>
+        <!--Image viewer-->
+        <script src="assets/vendor/doc-viewer/include/verySimpleImageViewer/js/jquery.verySimpleImageViewer.js"></script>
+        <!--officeToHtml-->
+        <script src="assets/vendor/doc-viewer/include/officeToHtml/officeToHtml.js"></script>
+        <script src="assets/js/doc-viewer.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+        <!-- app JavaScript -->
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/tiny-autocomplete.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/47585/slip.js"></script>
+        <script src="https://foliotek.github.io/Croppie/croppie.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script> -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js'></script>
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/php.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/php-template.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/sql.min.js"></script>
+        <script src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight-all.min.js"></script>
+        <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+
+        <script type="text/javascript" src="https://erp.unesync.com/assets/js/plugins/dropzone/dropzone.min.js"></script>
+
+        <!-- DatePicker -->
+        <script>
+            $(function() {
+                $(".datepicker").datepicker({
+                    dateFormat: "dd-mm-yy",
+                    duration: "fast"
+                });
+                $(".datepicker2").datepicker({
+                    dateFormat: "dd-mm-yy",
+                    duration: "fast"
+                });
+                $(".datepickerex").datepicker({
+                    dateFormat: "dd-mm-yy",
+                    duration: "fast"
+                });
+
+                $(".datepicker-button").on("click", function() {
+                    $(".datepicker").datepicker("show");
+                });
+                $(".datepicker-button2").on("click", function() {
+                    $(".datepicker2").datepicker("show");
+                });
+                $(".datepicker-buttonex").on("click", function() {
+                    $(".datepickerex").datepicker("show");
+                });
+            });
+
+        </script>
+
+        <script>
+            $(function() {
+                $('input').on('change', function() {
+                    var input = $(this);
+                    if (input.val().length) {
+                    input.addClass('populated');
+                    } else {
+                    input.removeClass('populated');
+                    }
+                });
+                
+                setTimeout(function() {
+                    $('#fname').trigger('focus');
+                }, 500);
+            });
+        </script>
+        <!-- H2 Editable Text Script -->
+        <script>
+            // Add a class "editableText" to all the elements you want to make editable
+            var editableTextElements = document.querySelectorAll(".editableText");
+
+            // Add the event listeners to all the elements
+            editableTextElements.forEach(function(editableTextElement) {
+                editableTextElement.addEventListener("click", function(event) {
+                    editableTextElement.className = "small_size";
+                    var input = document.createElement("input");
+                    input.value = editableTextElement.innerHTML;
+                    editableTextElement.innerHTML = "";
+                    editableTextElement.appendChild(input);
+                    input.focus();
+                    event.stopPropagation();
+                    input.addEventListener("blur", function() {
+                    editableTextElement.innerHTML = input.value;
+                    });
+                });
+
+                document.addEventListener("click", function() {
+                    editableTextElement.className = "big_size";
+                });
+            });
+        </script>
+        <script>
+            // Mini Header
+            $(".js-states.form-control.nosearch").select2({
+                minimumResultsForSearch: Infinity,
+                theme: "bootstrap4",
+            });
+
+            $(".js-example-placeholder-single-default").select2({
+                placeholder: "Default",
+            });
+
+            $(".js-example-placeholder-single-country").select2({
+                placeholder: "Select Country",
+            });
+
+            $(".js-example-placeholder-single-state").select2({
+                placeholder: "Select State",
+            });
+
+            $(".js-example-placeholder-single-industry").select2({
+                placeholder: "Client Industry",
+            });
+
+            $(".js-example-placeholder-single-currency").select2({
+                // placeholder: "Select Currency",
+            });
+        </script>
+        <script>
+            // Company with Button
+            $(".js-example-placeholder-single-brand").select2().data("select2").$dropdown.addClass("my-container");
+
+            var $customDiv = $('<div class="inner_box"><button id="custom-button"><iconify-icon icon="pajamas:plus"></iconify-icon> Create New Company</button></div>');
+
+            // Bind the "select2:open" event to the select2 element
+            $(".js-example-placeholder-single-brand").on("select2:open", function () {
+                // Append the custom div to the select2-dropdown element
+                $(".my-container .select2-dropdown").append($customDiv);
+            });
+        </script>
+        <script>
+            // Client with Button
+            $(".js-example-placeholder-single-client").select2().data("select2").$dropdown.addClass("my-container1");
+
+            var $customDiv1 = $('<div class="inner_box"><button id="custom-button"><iconify-icon icon="pajamas:plus"></iconify-icon> Add New Client</button></div>');
+
+            // Bind the "select2:open" event to the select2 element
+            $(".js-example-placeholder-single-client").on("select2:open", function () {
+                // Append the custom div to the select2-dropdown element
+                $(".my-container1 .select2-dropdown").append($customDiv1);
+            });
+        </script>
+        <script>
+            // Shipping Details with Button
+            $(".js-example-placeholder-single-shaddress").select2().data("select2").$dropdown.addClass("my-container2");
+
+            var $customDiv2 = $('<div class="inner_box"><button id="custom-button"><iconify-icon icon="pajamas:plus"></iconify-icon> Add New Shipping Details</button></div>');
+
+            // Bind the "select2:open" event to the select2 element
+            $(".js-example-placeholder-single-shaddress").on("select2:open", function () {
+                // Append the custom div to the select2-dropdown element
+                $(".my-container2 .select2-dropdown").append($customDiv2);
+            });
+        </script>
+        <script>
+            // Select Tax Type with Button
+            $(".js-example-placeholder-single-taxtype").select2().data("select2").$dropdown.addClass("my-container3");
+
+            var $customDiv3 = $('<div class="inner_box"><button id="custom-button"><iconify-icon icon="pajamas:plus"></iconify-icon> Create New Tax</button></div>');
+
+            // Bind the "select2:open" event to the select2 element
+            $(".js-example-placeholder-single-taxtype").on("select2:open", function () {
+                // Append the custom div to the select2-dropdown element
+                $(".my-container3 .select2-dropdown").append($customDiv3);
+            });
+        </script>
+
+        <script>
+            // Show Additional Discount Options
+            $("button.show_additional_charge").click(function(e) {
+                $('.hide_options').toggleClass('show');
+                $('button.show_additional_charge').hide();
+            });
+
+            // Show Item Wise Discount
+            $("button.giwd").click(function(e) {
+                $('.hide_discount_item').toggleClass('show');
+                $('button.giwd').hide();
+            });
+            $(".hide_discount_item button.close_btn").click(function(e) {
+                $('.hide_discount_item').toggleClass('show');
+                $('button.giwd').show();
+            });
+
+            // Show Item Wise Discount
+            $("button.gdtotal").click(function(e) {
+                $('.hide_adddiscount_item').toggleClass('show');
+                // $('button.gdtotal').hide();
+            });
+            $(".hide_adddiscount_item button.close_btn").click(function(e) {
+                $('.hide_adddiscount_item').toggleClass('show');
+            });
+
+            // Show Extra Discount
+            $("button.aachardes").click(function(e) {
+                $('.hide_addcharges_item').toggleClass('show');
+                // $('button.gdtotal').hide();
+            });
+            $(".hide_addcharges_item button.close_btn").click(function(e) {
+                $('.hide_addcharges_item').toggleClass('show');
+            });
+
+            // Show Item Wise Discount
+            $("button.show_total").click(function(e) {
+                $('.hidden_total').toggleClass('show');
+                $('button.show_total').hide();
+            });
+            $(".total-col button.close_btn").click(function(e) {
+                $('.hidden_total').toggleClass('show');
+                $('button.show_total').show();
+            });
+
+            // Show Item Wise Discount
+            $("button.show_field_extra").click(function(e) {
+                $('.add_field_item').toggleClass('show');
+                // $('button.show_total').hide();
+            });
+            $(".add_field_item button.close_re_btn").click(function(e) {
+                $('.add_field_item').toggleClass('show');
+                // $('button.show_total').show();
+            });
+
+
+            $("button.showContactdetails").click(function(e) {
+                $('.ycontactdetails').removeClass('hide');
+            });
+            $(".ycontactdetails button.close_cdt").click(function(e) {
+                $('.ycontactdetails').addClass('hide');
+            });
+
+
+            // Hide UnHide            
+            $(".action_btns button.hide").click(function(e) {
+                $('.action_btns button.unhide').addClass('show');
+                $('.action_btns button.hide').removeClass('show');
+            });
+            $(".action_btns button.unhide").click(function(e) {
+                $('.action_btns button.hide').addClass('show');
+                $('.action_btns button.unhide').removeClass('show');
+            });
+
+            // Add New Column        
+            $(".addnewcolumnbtn").click(function(e) {
+                $('.add_new_column').toggleClass('show');
+            });
+            $(".add_new_column button.remove").click(function(e) {
+                $('.add_new_column').toggleClass('show');
+            });
+
+
+            // Show Description on Table
+            $("button.openDescription").click(function(e) {
+                $('.hide_option_descandimage').addClass('show');
+                $('button.openDescription').hide();
+            });
+            $("button.openDescription2").click(function(e) {
+                $('.hide_option_descandimage2').addClass('show');
+                $('button.openDescription2').hide();
+            });
+
+            $("button.openthumbnails").click(function(e) {
+                $('.hide_option_imageOnly').addClass('show');
+                $('button.openthumbnails').hide();
+            });            
+            $("button.opetwo").click(function(e) {
+                $('.two_op').addClass('show');
+                $('button.opetwo').hide();
+            }); 
+            
+            
+
+            $("button.add_newfield").click(function(e) {
+                $('.hidden_row').addClass('show');
+            });            
+            $("a.remove_field").click(function(e) {
+                $('.hidden_row').removeClass('show');
+            });
+
+
+            $("a.showNewupi").click(function(e) {
+                $('.enter_new').addClass('show');
+            });            
+            // $("a.removeUpi").click(function(e) {
+            //     $('.enter_new').removeClass('show');
+            // });
+
+
+            $("button.save_bank_details").click(function(e) {
+                $('.save_bankdetails').addClass('show');
+                $('.bankdetails.show').removeClass('show');
+                $('.title_text.show').removeClass('show');
+                $('button.save_bank_details').hide();
+            }); 
+            $("a.shownewbankdetails").click(function(e) {
+                $('.save_bankdetails').removeClass('show');
+                $('.bankdetails').addClass('show');
+                $('.title_text').addClass('show');
+                $('button.save_bank_details').show();
+            }); 
+        </script>
+
+        <script>
+            var ul = document.getElementById('sortable-list');
+
+            ul.addEventListener('slip:beforereorder', function(e){
+            if (/demo-no-reorder/.test(e.target.className)) {
+                e.preventDefault();
+            }
+            }, false);
+
+            ul.addEventListener('slip:beforeswipe', function(e){
+            if (e.target.nodeName == 'INPUT' || /no-swipe/.test(e.target.className)) {
+                e.preventDefault();
+            }
+            }, false);
+
+            ul.addEventListener('slip:beforewait', function(e){
+            if (e.target.className.indexOf('instant') > -1) e.preventDefault();
+            }, false);
+
+            /*ul.addEventListener('slip:afterswipe', function(e){
+            e.target.parentNode.appendChild(e.target);
+            }, false);*/
+
+            ul.addEventListener('slip:reorder', function(e){
+            e.target.parentNode.insertBefore(e.target, e.detail.insertBefore);
+            return false;
+            }, false);
+
+            new Slip(ul);
+        </script>
+
+        <script>
+
+            var editor = new toastui.Editor({
+                el: document.querySelector('#editor1'),
+                initialEditType: 'wysiwyg'
+            });
+
+            var editor = new toastui.Editor({
+                el: document.querySelector('#editor2'),
+                initialEditType: 'wysiwyg'
+            });
+
+            var editor = new toastui.Editor({
+                el: document.querySelector('#editor3'),
+                initialEditType: 'wysiwyg'
+            });
+        </script>
+
+        <script>
+            // Dropzone
+            Dropzone.autoDiscover = false;
+            var dropzones = [];
+            $(document).ready(function () {
+                $(".dropzone").each(function (i, el) {
+                    var name = "g_" + $(el).data("field");
+                    var myDropzone = new Dropzone(el, {
+                        url: window.location.pathname,
+                        autoProcessQueue: false,
+                        uploadMultiple: true,
+                        parallelUploads: 1,
+                        maxFiles: 5,
+                        paramName: name,
+                        addRemoveLinks: true,
+                        removedfile: function (file) {
+                            file.previewElement.remove();
+                        },
+                    });
+                    dropzones.push(myDropzone);
+                });
+            });
+        </script>
+
+        <script>
+            jQuery(document).ready(function () {
+                ImgUpload();
+                });
+
+                function ImgUpload() {
+                var imgWrap = "";
+                var imgArray = [];
+
+                $('.upload__inputfile').each(function () {
+                    $(this).on('change', function (e) {
+                    imgWrap = $(this).closest('.upload__box').find('.upload__img-wrap');
+                    var maxLength = $(this).attr('data-max_length');
+
+                    var files = e.target.files;
+                    var filesArr = Array.prototype.slice.call(files);
+                    var iterator = 0;
+                    filesArr.forEach(function (f, index) {
+
+                        if (!f.type.match('image.*')) {
+                        return;
+                        }
+
+                        if (imgArray.length > maxLength) {
+                        return false
+                        } else {
+                        var len = 0;
+                        for (var i = 0; i < imgArray.length; i++) {
+                            if (imgArray[i] !== undefined) {
+                            len++;
+                            }
+                        }
+                        if (len > maxLength) {
+                            return false;
+                        } else {
+                            imgArray.push(f);
+
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                            var html = "<div class='upload__img-box'><div style='background-image: url(" + e.target.result + ")' data-number='" + $(".upload__img-close").length + "' data-file='" + f.name + "' class='img-bg'><div class='upload__img-close'></div></div></div>";
+                            imgWrap.append(html);
+                            iterator++;
+                            }
+                            reader.readAsDataURL(f);
+                        }
+                        }
+                    });
+                    });
+                });
+
+                $('body').on('click', ".upload__img-close", function (e) {
+                    var file = $(this).parent().data("file");
+                    for (var i = 0; i < imgArray.length; i++) {
+                    if (imgArray[i].name === file) {
+                        imgArray.splice(i, 1);
+                        break;
+                    }
+                    }
+                    $(this).parent().parent().remove();
+                });
+                }
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.12/dist/cropper.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                let cropper;
+                const image = document.getElementById("preview");
+                const imageToCrop = document.getElementById("imageToCrop");
+                const cropModalElement = document.getElementById("cropModal");
+                const cropModal = new bootstrap.Modal(cropModalElement);
+                const uploadButton = document.querySelector("label[for='uploadImage']");
+                const changeButton = document.getElementById("changeImage");
+
+                $("#uploadImage").on("change", function (event) {
+                    handleImageUpload(event);
+                });
+
+                $("#changeImage").on("click", function (event) {
+                    handleImageUpload(event);
+                });
+
+                $("#replaceImage").on("click", function () {
+                    $("#uploadImage").click();
+                });
+
+                function handleImageUpload(event) {
+                    const file = event.target.files[0];
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                    imageToCrop.src = e.target.result;
+                        cropModal.show();
+                    };
+
+                    reader.readAsDataURL(file);
+                }
+
+                cropModalElement.addEventListener("shown.bs.modal", function () {
+                    if (cropper) {
+                    cropper.destroy();
+                    }
+
+                    cropper = new Cropper(imageToCrop, {
+                    aspectRatio: 1,
+                    viewMode: 1,
+                    cropBoxResizable: true,
+                    data: {
+                        width: 550,
+                        height: 400,
+                    },
+                    ready: function () {
+                        cropper.setCropBoxData({
+                        width: 550,
+                        height: 400,
+                        });
+                    },
+                    });
+                });
+
+                $("#cropAndSave").on("click", function () {
+                    const croppedImageDataURL = cropper.getCroppedCanvas().toDataURL();
+                    image.src = croppedImageDataURL;
+                    cropper.destroy();
+                    cropper = null;
+                    cropModal.hide();
+                    uploadButton.style.display = "none";
+                    changeButton.style.display = "inline-block";
+                });
+            });
+        </script>
+        
+        <div class="modal fade twoside_modal" id="cropModal" tabindex="-1" aria-labelledby="cropModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                    </button>
+                    <div class="modal-body">
+                        <div class="setup_wrapper">
+                            <h2>Crop Image</h2>
+                            <div style="height: 400px; width: 100%;">
+                                <div class="img-container">
+                                    <img id="imageToCrop" class="image-to-crop" crossorigin="anonymous" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="replaceImage"><iconify-icon icon="material-symbols:upload-rounded"></iconify-icon> Upload Different Image</button>
+                        <button type="button" class="btn btn-primary" id="cropAndSave">Save Cropped Image</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

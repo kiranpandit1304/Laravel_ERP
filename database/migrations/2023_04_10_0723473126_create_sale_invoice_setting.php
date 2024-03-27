@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class Createsaleinvoicesetting extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+   public function up()
+    {
+        Schema::create('sale_invoice_setting', function (Blueprint $table) {
+            $table->id();
+            $table->integer('user_id')->nullable();
+            $table->integer('business_id')->nullable();
+            $table->string('signature_url')->nullable();
+            $table->string('signature_name')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->timestamps();
+         });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        
+         Schema::dropIfExists('sale_invoice_setting');
+    }
+}

@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>PDF Theme 1</title>
+
+    <style>
+        .container {
+            max-width: 960px;
+        }
+
+        #pdfView {
+            padding: 50px 0px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .invoice_preview {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 8%);
+            border-radius: 6px;
+            padding: 20px;
+            gap: 30px;
+        }
+
+        .invoice_preview .ip_header {}
+
+        .invoice_preview .ip_header .sm_info .sm_right {
+            width: 211px;
+            height: 200px;
+            display: inline-block;
+        }
+
+        .invoice_preview .ip_header h2 {
+            font-size: 32px;
+            color: rgba(var(--theme-color));
+            /* color: #8a0efc; */
+            margin-bottom: 10px;
+        }
+
+        .invoice_preview .ip_header .sm_info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .invoice_preview .ip_header .sm_info ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 9px;
+        }
+
+        .invoice_preview .ip_header .sm_info ul li {
+            font-size: 14px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .invoice_preview .ip_header .sm_info ul li span {
+            font-weight: 400;
+            width: 125px;
+            display: inline-block;
+        }
+
+        .invoice_preview .ip_header .sm_info .sm_right img {
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .invoice_preview .bill_details {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .invoice_preview .bill_details .bill_by {
+            width: 100%;
+            background: rgba(var(--theme-color), var(--theme-opacity));
+            /* background: #f7eeff; */
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .invoice_preview .bill_details .bill_to {
+            width: 100%;
+            background: rgba(var(--theme-color), var(--theme-opacity));
+            /* background: #f7eeff; */
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .invoice_preview .bill_details h2 {
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 0px;
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .invoice_preview .bill_details h6 {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .invoice_preview .bill_details p {
+            color: #000;
+            font-size: 14px;
+        }
+
+        .ip_body table {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .ip_body .table-responsive {
+            border: 1px solid #f7eeff;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .ip_body table thead {}
+
+        .ip_body table thead tr {}
+
+        .ip_body table thead th {
+            background: rgba(var(--theme-color));
+            /* background: #006AFF; */
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 10px;
+            text-align: center;
+        }
+
+        .ip_body table tbody {
+            /* border: 1px solid #000;
+            overflow: hidden; */
+        }
+
+        .ip_body table tbody tr {
+            /* border: 1px solid #000;
+            overflow: hidden; */
+        }
+
+        .ip_body table tbody td {
+            background: #fff;
+            color: #000;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 10px 10px;
+            text-align: center;
+        }
+
+        .ip_body table thead th:nth-child(2) {
+            text-align: left;
+        }
+
+        .ip_body table tbody td:nth-child(2) {
+            text-align: left;
+        }
+
+        .ip_body table tbody tr.alternate td {
+            background: rgba(var(--theme-color), var(--theme-opacity));
+            /* background: #f7eeff; */
+        }
+
+        tr.item-name-row.item-group-row.full-width td {
+            background: rgba(var(--theme-color), var(--theme-opacity)) !important;
+        }
+
+        .ip_footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .ip_footer .foot_left {
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .ip_footer .foot_left .bank_details_card {
+            width: 55%;
+            background: rgba(var(--theme-color), var(--theme-opacity));
+            /* background: #f7eeff; */
+            border-radius: 10px;
+            padding: 11px;
+        }
+
+        .ip_footer .foot_left .upi_details_card {
+            width: 44%;
+            padding: 10px;
+            padding-top: 12px;
+        }
+
+        .ip_footer .foot_left .upi_details_card button {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(var(--theme-color));
+            /* color: #006AFF; */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            width: 100%;
+        }
+
+        .ip_footer .foot_left .upi_details_card span {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+            color: #000;
+        }
+
+        .ip_footer .foot_left .upi_details_card span p.small_p {
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .ip_footer .foot_left .upi_details_card span img {
+            width: 130px;
+            height: 130px;
+        }
+
+        .ip_footer .foot_left .bank_details_card button {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(var(--theme-color));
+            /* color: #006AFF; */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+        }
+
+        .ip_footer .foot_left .bank_details_card ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .ip_footer .foot_left .bank_details_card ul li {
+            font-size: 14px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            width: 100%;
+            color: #000;
+        }
+
+        .ip_footer .foot_left .bank_details_card ul li span {
+            font-weight: 600;
+            width: 54%;
+        }
+
+        .ip_footer .foot_right {
+            width: 40%;
+        }
+
+        .ip_footer .foot_right ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .ip_footer .foot_right ul li {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #000;
+
+        }
+
+        .ip_footer .foot_right ul li.total {
+            padding: 10px 0px;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .three_column {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .three_column .column {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .colorSelector {
+            width: 100%;
+            min-height: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .colorPickers {
+            display: flex;
+            width: 30px;
+            margin-bottom: 0;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 30px;
+            border: 1px solid #006AFF;
+        }
+
+        .colorSelector .buttonContainer {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+
+        .colorPickers button#colorPickerIcon {
+            background: #faf8ff;
+            position: relative;
+        }
+
+        .colorPickers button#colorPickerIcon iconify-icon {
+            padding: 0px 6px;
+            width: 33px;
+            height: auto;
+            position: relative;
+            top: 0;
+            background: transparent;
+            display: flex;
+            font-size: 29px !important;
+            left: -2px;
+        }
+
+        .colorSelector input[type="radio"] {
+            display: none;
+            height: 0;
+            width: 0;
+        }
+
+        .colorSelector label:hover .colorOption {
+            transform: scale(1);
+        }
+
+        .buttonContainer input:checked~.colorOption {
+            /* transform: scale(1.5); */
+            box-shadow: none;
+            border: 2px solid #8a0efc;
+        }
+
+        .three_column .column .select-full {
+            width: 100%;
+        }
+
+        .three_column .column .select-full .select2-container {
+            width: 100% !important;
+            height: 35px !important;
+        }
+
+        .three_column .column .select-full .select2-container--bootstrap4 .select2-selection--single,
+        .three_column .column .select-full .select2-container--default .select2-selection--single {
+            height: 35px !important;
+        }
+
+        .three_column .column .select-full .select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered,
+        .three_column .column .select-full .select2-container--default .select2-selection--single .select2-selection__rendered {
+            padding-left: 0.8em !important;
+            font-family: 'Poppins', sans-serif !important;
+            line-height: 35px !important;
+            color: #000 !important;
+            font-size: 14px !important;
+        }
+
+        .three_column .column .select-full .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 35px !important;
+            right: 21px;
+        }
+
+        .three_column .column .select-full .select2-container--default .select2-selection--single .select2-selection__arrow b::after {
+            content: url('https://api.iconify.design/iconoir/nav-arrow-down.svg?width=25&height=25');
+        }
+
+        .three_column.header_footer .column {
+            width: 100%;
+            position: relative;
+        }
+
+        .uploadImageLogo {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .three_column.header_footer .column label.btn-upload.upload-button {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            font-size: 12px;
+        }
+
+        .three_column.header_footer .column label.btn-upload.upload-button iconify-icon {
+            font-size: 30px;
+        }
+
+        .three_column.header_footer .column .image-preview {
+            width: 100%;
+            height: 160px;
+            border-radius: 10px;
+        }
+
+        .three_column.header_footer .column .image-preview img#preview {
+            object-fit: cover;
+        }
+
+        .three_column.header_footer .column p {
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 0px;
+            font-size: 0.75rem;
+            color: rgb(97, 113, 131);
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .three_column .column.last {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .page_minidetail .uploadImageLogo {
+            width: auto;
+            height: auto;
+        }
+
+        .uploadImageLogo button#removeImage {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #000;
+            color: #fff;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 100%;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            right: 10px;
+            top: 10px;
+        }
+
+        .colorOption {
+            background: #4CAF50;
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+
+        .colorOption.color1 {
+            background: #006AFF;
+        }
+
+        .colorOption.color2 {
+            background: #FDBB8B;
+        }
+
+        .colorOption.color3 {
+            background: #537188;
+        }
+
+        .colorOption.color4 {
+            background: #F7D347;
+        }
+
+        .colorOption.color5 {
+            background: #F36446;
+        }
+
+        .colorOption.color6 {
+            background: #3D4CE7;
+        }
+
+        .colorOption.color7 {
+            background: #000;
+        }
+
+        .invoice-hsn-table-wrapper .invoice-hsn-table {
+            border: 1px solid #000;
+            box-shadow: none;
+            margin: 0;
+            width: 100%;
+            border-radius: 6px;
+            -webkit-print-color-adjust: exact;
+            color-adjust: exact;
+        }
+
+        .invoice-hsn-table-wrapper .small-item-row {
+            display: none;
+        }
+
+        .invoice-hsn-table-wrapper .large-item-row th:first-child,
+        .invoice-hsn-table-wrapper .large-item-row th:nth-child(2) {
+            text-align: left;
+        }
+
+        .invoice-hsn-table-wrapper .invoice-hsn-table th {
+            background: rgba(var(--theme-color), var(--theme-opacity));
+            font-size: 14px;
+        }
+
+        .invoice-hsn-table-wrapper .invoice-hsn-table th,
+        .invoice-hsn-table-wrapper .invoice-hsn-table td {
+            padding: 5px 5px 5px 10px;
+            border: 1px solid #000;
+            text-align: center;
+            vertical-align: middle;
+            font-family: -webkit-var(--title-font, 'Open Sans'), var(--fallback-fonts);
+            font-family: var(--title-font, 'Open Sans'), var(--fallback-fonts);
+            font-size: 14px;
+            color: #000;
+        }
+
+
+        .invoice_preview .einvoice .rightside img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .invoice_preview .einvoice {
+            margin-top: 30px;
+            background: rgba(var(--theme-color), var(--theme-opacity));
+            border-radius: 10px;
+            position: relative;
+            z-index: 0;
+        }
+
+        .theme4 .einvoice {
+            background: no-repeat;
+            border-top: 1px solid #000;
+            border-radius: 0;
+        }
+
+        .theme3 .einvoice::after {
+            content: '';
+            background: rgba(255, 255, 255, 0.9);
+            top: 0;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        .theme3 .ip_header .sm_info .sm_right {
+            position: relative;
+            z-index: 0;
+            padding: 20px;
+        }
+
+        .einvoice {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            /* border: 1px dashed rgb(180, 194, 213); */
+            background: #e6f0ff;
+            border-radius: 4px;
+            padding: 10px 15px;
+            padding-left: 15px;
+        }
+
+        .einvoice .left_side {}
+
+        .einvoice .left_side ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+        }
+
+        .einvoice .left_side ul li {
+            font-size: 14px;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .einvoice .left_side ul li span {
+            font-weight: 400;
+            color: #000;
+            width: 100px;
+            display: inline-block;
+        }
+
+        .einvoice .rightside {}
+
+        .einvoice .rightside img {
+            width: 150px;
+            height: 150px;
+            border-radius: 4px;
+        }
+
+        .tandc {}
+
+        .tandc h2 {
+            font-size: 18px;
+            font-weight: 500;
+            color: rgba(var(--theme-color));
+            /* color: #006AFF; */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+        }
+
+        .tandc ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            list-style: devanagari;
+            padding-left: 20px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .theme3 .ip_header .sm_info .sm_right::after {
+            content: '';
+            background: rgba(255, 255, 255, 0.9);
+            top: 0;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        .theme3 .ip_footer .foot_right ul li.total {
+            background: rgba(var(--theme-color));
+            padding: 10px 10px;
+            color: #fff;
+        }
+
+        :root {
+            --dark-orange: #FDBB8B;
+            --light-orange: #fff1e8;
+            --dark-gray: #838c91;
+            --light-gray: #f8fbfc;
+            --dark-yellow: #F7D347;
+            --light-yellow: #fefbed;
+            --dark-red: #F36446;
+            --light-red: #fef0ed;
+            --dark-blue: #3D4CE7;
+            --light-blue: #ecedfd;
+            --theme-color: 140, 20, 252;
+            /* RGB values for black color */
+            --theme-opacity: 0.1;
+            /* Adjust this for your desired opacity */
+        }
+
+        .theme2 {
+            --theme-color: 10, 212, 162 !important;
+        }
+
+        .theme3 {
+            --theme-color: 255, 217, 90 !important;
+        }
+
+        .theme4 {
+            --theme-color: 0, 0, 0 !important;
+        }
+
+        .default_color {
+            --theme-color: 140, 20, 252 !important;
+        }
+
+        .orange_color {
+            --theme-color: 253, 187, 139 !important;
+        }
+
+        .gray_color {
+            --theme-color: 83, 113, 136 !important;
+        }
+
+        .yellow_color {
+            --theme-color: 247, 211, 71 !important;
+        }
+
+        .red_color {
+            --theme-color: 243, 100, 70 !important;
+        }
+
+        .blue_color {
+            --theme-color: 61, 76, 231 !important;
+        }
+
+        .black_color {
+            --theme-color: 0, 0, 0 !important;
+        }
+
+        .theme3 .ip_header .sm_info ul li {
+            color: #fff;
+        }
+
+        .colorPickers {
+            display: flex;
+            width: 30px;
+            margin-bottom: 0;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 30px;
+        }
+
+        .colorPickers input#colorPicker {
+            height: 30px;
+        }
+
+        .invoice_preview.orange_color {}
+
+        .invoice_preview.theme1 h2.for_theme_3,
+        .invoice_preview h2.for_theme_3 {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body class="  " translate="no">
+    <div id="pdfView">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="invoice_preview">
+                        <div class="ip_header">
+                            <h2 class="for_theme_3">Invoice</h2>
+                            <div class="sm_info">
+                                <div class="sm_left">
+                                    <h2>Invoice</h2>
+                                    <ul>
+                                        <li><span>Invoice No#</span>A00002</li>
+                                        <li><span>Invoice Date</span>February 03, 2023</li>
+                                        <li><span>Due Date</span>February 18, 2023</li>
+                                        <li><span>Created By</span>Jafar</li>
+                                    </ul>
+                                </div>
+                                <div class="sm_right">
+                                    <img src="assets/images/logo.png" alt="">
+                                </div>
+                            </div>
+                            <div class="einvoice">
+                                <div class="left_side">
+                                    <ul>
+                                        <li><span>IRN:</span>9as9d8as9d85sa98as95d9as5d9</li>
+                                        <li><span>Ack No:</span>12136456548</li>
+                                        <li><span>Ack Date:</span>20-03-2023 15:35:00</li>
+                                    </ul>
+                                </div>
+                                <div class="rightside">
+                                    <img src="assets/images/qr_code.png" alt="">
+                                </div>
+                            </div>
+                            <div class="bill_details">
+                                <div class="bill_by">
+                                    <h2>Billed By</h2>
+                                    <h6>Unesync</h6>
+                                    <p>Vadodara,<br />
+                                        Gujarat, India - 391740</p>
+                                </div>
+                                <div class="bill_to">
+                                    <h2>Billed To</h2>
+                                    <h6>ewfewf</h6>
+                                    <p>Vadodara,<br />
+                                        Gujarat, India - 391740</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ip_body">
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th width="10" aria-label="Item Number"></th>
+                                            <th>Item</th>
+                                            <th>GST Rate</th>
+                                            <th>Quantity</th>
+                                            <th>Rate</th>
+                                            <th>Discount</th>
+                                            <th>Amount</th>
+                                            <th>CGST</th>
+                                            <th>SGST</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="alternate">
+                                            <td>1.</td>
+                                            <td class="" width="200"><span class="">Item</span></td>
+                                            <td class="" width="10">undefined%</td>
+                                            <td class="" width="10">1</td>
+                                            <td class="" width="10">₹1</td>
+                                            <td class="" width="10">2%</td>
+                                            <td class="" width="10">₹0.98</td>
+                                            <td class="" width="10">₹0</td>
+                                            <td class="" width="10">₹0</td>
+                                            <td class="" width="10">₹0.98</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td class="" width="200"><span class="">Item</span></td>
+                                            <td class="" width="10">undefined%</td>
+                                            <td class="" width="10">1</td>
+                                            <td class="" width="10">₹1</td>
+                                            <td class="" width="10">2%</td>
+                                            <td class="" width="10">₹0.98</td>
+                                            <td class="" width="10">₹0</td>
+                                            <td class="" width="10">₹0</td>
+                                            <td class="" width="10">₹0.98</td>
+                                        </tr>
+                                        <tr class="item-name-row item-group-row full-width">
+                                            <td colspan="100" class=""
+                                                style="text-align: left; background: #F7EEFF; font-weight: 600;">
+                                                Product</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="ip_footer">
+                            <div class="foot_left">
+                                <div class="bank_details_card">
+                                    <button>Bank Details <iconify-icon
+                                            icon="material-symbols:edit-rounded"></iconify-icon></button>
+                                    <ul>
+                                        <li><span>Account Holder Name</span> Rohan Chopra</li>
+                                        <li><span>Account Number</span> 56568656848</li>
+                                        <li><span>Aadhar</span> SBIN0060288</li>
+                                        <li><span>IBAN</span> 564645694</li>
+                                        <li><span>Account Type</span> Current</li>
+                                        <li><span>Bank</span> State Bank</li>
+                                    </ul>
+                                </div>
+                                <div class="upi_details_card">
+                                    <button>UPI - Scan to Pay <iconify-icon
+                                            icon="material-symbols:edit-rounded"></iconify-icon></button>
+                                    <span>
+                                        <img src="assets/images/qr_code.png" alt="">
+                                        <p class="small_p">(Maximum of 1 Lakh can be transferred via UPI)
+                                        </p>
+                                        <p>mansuri.jafar7@oksbi</p>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="foot_right">
+                                <ul>
+                                    <li>Sub Total <span>₹2</span></li>
+                                    <li>Discount(2%) <span>(₹0.04)</span></li>
+                                    <li>Amount<span>₹1.96</span></li>
+                                    <li>SGST<span>₹0</span></li>
+                                    <li>CGST<span>₹0</span></li>
+                                    <li class="total">Total (INR) <span>₹1.96</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="invoice-hsn-table-wrapper">
+                            <table class="invoice-hsn-table" cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr class="no-pdf small-item-row">
+                                        <th colspan="2">HSN Summary</th>
+                                    </tr>
+                                    <tr class="large-item-row aside-collpased">
+                                        <th>HSN</th>
+                                        <th>Taxable Value</th>
+                                        <th colspan="2">IGST</th>
+                                        <th colspan="2">CGST</th>
+                                        <th colspan="2">SGST</th>
+                                        <th>Total</th>
+                                    </tr>
+                                    <tr class="large-item-row aside-collpased">
+                                        <th aria-label="Empty"></th>
+                                        <th aria-label="Empty"></th>
+                                        <th>Rate</th>
+                                        <th>Amount</th>
+                                        <th>Rate</th>
+                                        <th>Amount</th>
+                                        <th>Rate</th>
+                                        <th>Amount</th>
+                                        <th aria-label="Empty"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="no-pdf small-item-row full-width">
+                                        <td>HSN</td>
+                                        <td>998311</td>
+                                    </tr>
+                                    <tr class="no-pdf small-item-row full-width">
+                                        <td>Taxable Value</td>
+                                        <td>0.98</td>
+                                    </tr>
+                                    <tr class="no-pdf small-item-row full-width">
+                                        <td>IGST Rate</td>
+                                        <td>0%</td>
+                                    </tr>
+                                    <tr class="no-pdf small-item-row full-width">
+                                        <td>IGST Amount</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr class="no-pdf small-item-row full-width">
+                                        <td>SGST Rate</td>
+                                        <td>%</td>
+                                    </tr>
+                                    <tr class="no-pdf small-item-row full-width">
+                                        <td>SGST Amount</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr class="no-pdf small-item-row full-width">
+                                        <td>CGST Rate</td>
+                                        <td>%</td>
+                                    </tr>
+                                    <tr class="no-pdf small-item-row full-width">
+                                        <td>CGST Amount</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr class="no-pdf small-item-row full-width">
+                                        <td>Total</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr class="large-item-row aside-collapsed">
+                                        <td>998311</td>
+                                        <td>₹0.98</td>
+                                        <td>0%</td>
+                                        <td>₹0</td>
+                                        <td>%</td>
+                                        <td>₹0</td>
+                                        <td>%</td>
+                                        <td>₹0</td>
+                                        <td>₹0</td>
+                                    </tr>
+                                    <tr class="large-item-row aside-collapsed">
+                                        <td class="strong">Total</td>
+                                        <td>₹0.98</td>
+                                        <td></td>
+                                        <td>₹0</td>
+                                        <td></td>
+                                        <td>₹0</td>
+                                        <td></td>
+                                        <td>₹0</td>
+                                        <td>₹0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tandc">
+                            <h2>Terms and Conditions</h2>
+                            <ul>
+                                <li>Please pay within 15 days from the date of invoice, overdue interest @
+                                    14% will be charged on delayed payments.</li>
+                                <li>Please quote invoice number when remitting funds.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
