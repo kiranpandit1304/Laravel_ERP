@@ -1,0 +1,2602 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Unesync Product Prototype</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+        <link rel="stylesheet" href="assets/css/backend.css" />
+        <!-- <link rel="stylesheet" href="assets/css/backend.min.css" /> -->
+        <link rel="stylesheet" href="assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" />
+        <link rel="stylesheet" href="assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css" />
+        <link rel="stylesheet" href="assets/vendor/remixicon/fonts/remixicon.css" />
+
+        <link rel="stylesheet" href="https://foliotek.github.io/Croppie/croppie.css" />
+
+        <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" /> -->
+        <link rel="stylesheet" href="assets/css/datepicker.css" />
+
+        <link rel="stylesheet" href="assets/css/select2.css" />
+        <link rel="stylesheet" href="assets/css/select2-bootstrap4.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
+        <link href="https://erp.unesync.com/assets/js/plugins/dropzone/css/dropzone.css" rel="stylesheet" type="text/css" />
+
+        <!-- Viewer Plugin -->
+        <!-- File upload create customer -->
+        <link rel="stylesheet" href="assets/css/fancy_fileupload.css" />
+        <!--PDF-->
+        <link rel="stylesheet" href="assets/vendor/doc-viewer/include/pdf/pdf.viewer.css" />
+        <!--Docs-->
+        <!--PPTX-->
+        <link rel="stylesheet" href="assets/vendor/doc-viewer/include/PPTXjs/css/pptxjs.css" />
+        <link rel="stylesheet" href="assets/vendor/doc-viewer/include/PPTXjs/css/nv.d3.min.css" />
+        <!--All Spreadsheet -->
+        <link rel="stylesheet" href="assets/vendor/doc-viewer/include/SheetJS/handsontable.full.min.css" />
+        <!--Image viewer-->
+        <link rel="stylesheet" href="assets/vendor/doc-viewer/include/verySimpleImageViewer/css/jquery.verySimpleImageViewer.css" />
+        <!--officeToHtml-->
+        <link rel="stylesheet" href="assets/vendor/doc-viewer/include/officeToHtml/officeToHtml.css" />
+    </head>
+    <body class="  ">
+        <!-- loader Start -->
+        <!-- <div id="loading">
+            <div id="loading-center">
+                <div class="box_load">
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
+                    <lottie-player src="https://lottie.host/395d8343-2d5c-4184-893a-c0eaddab342b/1aIAnkPwlW.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                </div>
+            </div>
+        </div> -->
+        <!-- loader END -->
+        <!-- Wrapper Start -->
+        <div class="border"></div>
+        <div class="top_notch">
+            <div class="notch">
+                <button type="button" class="btn btn-secondary mt-2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tooltip on bottom">
+                    <iconify-icon icon="ph:info"></iconify-icon>
+                </button>
+                <h6>Practise Mode</h6>
+                <div class="pr_mode">
+                    <input id="pr_mode1" type="checkbox" hidden="hidden" checked />
+                    <label class="switch" for="pr_mode1"></label>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_notch">
+            <div class="notch">
+                <h6>Changes will not be saved in Practise Mode</h6>
+            </div>
+        </div>
+        <!-- <div class="prMode">
+            
+        </div> -->
+        <div class="wrapper">
+            <div class="iq-sidebar sidebar-default">
+                <div class="iq-sidebar-logo d-flex align-items-center justify-content-between advance_logo">
+                    <a href="#" class="dropdown-toggle circle-hover header-logo" id="dropdownMenuButton02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo" />
+                        <iconify-icon icon="bx:rotate-left"></iconify-icon>
+                        <!-- <img src="assets/images/logo-white.png" class="img-fluid rounded-normal darkmode-logo" alt="logo" /> -->
+                    </a>
+                    <div class="iq-sub-dropdown dropdown-menu advance_drop" aria-labelledby="dropdownMenuButton02">
+                        <div class="card shadow-none m-0">
+                            <div class="card-body p-0 notification_box">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="main_bus">
+                                            <div class="lside_p">
+                                                <span><img src="assets/images/logo.png" class="" alt="logo" /></span>
+                                                <h6>Unesync Ltd</h6>
+                                            </div>
+                                            <div class="rside_p">
+                                                <a href="#"><iconify-icon icon="ep:setting"></iconify-icon></a>
+                                            </div>
+                                        </div>
+                                        <label for="">Switch Business</label>
+                                        <div class="bu_list">
+                                            <div class="main_bus">
+                                                <a href="#">
+                                                    <div class="lside_p">
+                                                        <span><img src="assets/images/logo.png" class="" alt="logo" /></span>
+                                                        <h6>Unesync Ltd</h6>
+                                                    </div>
+                                                    <div class="rside_p">
+                                                        <iconify-icon icon="charm:tick"></iconify-icon>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="main_bus">
+                                                <a href="#">
+                                                    <div class="lside_p">
+                                                        <span><img src="assets/images/logo_crop.png" class="" alt="logo" /></span>
+                                                        <h6>Decimal Space</h6>
+                                                    </div>
+                                                    <div class="rside_p">
+                                                        <!-- <iconify-icon icon="charm:tick"></iconify-icon> -->
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="main_bus">
+                                            <button type="button" id="opencreatenewbusiness">
+                                                <div class="lside_p">
+                                                    <span class="animated tada"><iconify-icon icon="ic:round-add"></iconify-icon></span>
+                                                    <h6>Create New Business</h6>
+                                                </div>
+                                                <div class="rside_p">
+                                                    <!-- <iconify-icon icon="charm:tick"></iconify-icon> -->
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <a href="index.html" class="header-logo">
+                        <img src="assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo" />
+                        <img src="assets/images/logo-white.png" class="img-fluid rounded-normal darkmode-logo" alt="logo" />
+                    </a> -->
+                    <div class="iq-menu-bt-sidebar">
+                        <i class="las la-bars wrapper-menu"></i>
+                    </div>
+                </div>
+                <div class="data-scrollbar" data-scroll="1">
+                    <div class="new-create select-dropdown input-prepend input-append">
+                        <div class="btn-group">
+                            <label data-toggle="dropdown">
+                                <div class="search-query selet-caption">
+                                    <svg fill="#006AFF" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 45.402 45.402" xml:space="preserve">
+                                        <g>
+                                            <path
+                                                d="M41.267,18.557H26.832V4.134C26.832,1.851,24.99,0,22.707,0c-2.283,0-4.124,1.851-4.124,4.135v14.432H4.141
+                                            c-2.283,0-4.139,1.851-4.138,4.135c-0.001,1.141,0.46,2.187,1.207,2.934c0.748,0.749,1.78,1.222,2.92,1.222h14.453V41.27
+                                            c0,1.142,0.453,2.176,1.201,2.922c0.748,0.748,1.777,1.211,2.919,1.211c2.282,0,4.129-1.851,4.129-4.133V26.857h14.435
+                                            c2.283,0,4.134-1.867,4.133-4.15C45.399,20.425,43.548,18.557,41.267,18.557z"
+                                            />
+                                        </g>
+                                    </svg>
+                                    Create New
+                                </div>
+                                <span class="search-replace"></span>
+                                <span class="caret"><!--icon--></span>
+                            </label>
+                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">
+                                        <span class="bg_yellow squre_icon"><iconify-icon icon="tabler:brand-abstract"></iconify-icon></span><span>Clients & Vendors</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">Customer</a></li>
+                                        <li><a tabindex="-1" href="#">Vendor</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">
+                                        <span class="bg_green squre_icon"><iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon></span><span>Accounting</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="create-invoice.html">Invoices</a></li>
+                                        <li><a tabindex="-1" href="#">Banking</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">
+                                        <span class="bg_purple squre_icon"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon></span><span>Leads & Tickets</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">Form</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">
+                                        <span class="bg_red squre_icon"><iconify-icon icon="eos-icons:project-outlined"></iconify-icon></span><span>Projects</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">Timesheet</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">
+                                        <span class="bg_darkblu squre_icon"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon></span><span>Products & Inventory</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">Product</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">
+                                        <span class="bg_gray squre_icon"><iconify-icon icon="ic:twotone-warehouse"></iconify-icon></span><span>Warehouse</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">POSM</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <nav class="iq-sidebar-menu">
+                        <ul id="iq-sidebar-toggle" class="iq-menu">
+                            <li class="">
+                                <a href="index.html" class="">
+                                    <iconify-icon style="opacity: 0;" icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <span class="bg_blue squre_icon"><iconify-icon icon="tabler:home"></iconify-icon></span><span>Dashboard</span>
+                                </a>
+                                <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle"></ul>
+                            </li>
+                            <li class="active">
+                                <a href="#mydrive" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                    <iconify-icon icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <iconify-icon icon="ic:baseline-arrow-drop-down" class="iq-arrow-right arrow-hover"></iconify-icon>
+                                    <span class="bg_yellow squre_icon"><iconify-icon icon="tabler:brand-abstract"></iconify-icon></span><span>Clients & Vendors</span>
+                                </a>
+                                <ul id="mydrive" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                    <li class="active">
+                                        <a href="customer-management.html">
+                                            <span class="squre_icon"><iconify-icon icon="fluent-mdl2:recruitment-management"></iconify-icon></span><span>Customer management</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="vendor-management.html">
+                                            <span class="squre_icon"><iconify-icon icon="fluent-mdl2:recruitment-management"></iconify-icon></span><span>Vendor management</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class=" ">
+                                <a href="#accounting" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                    <iconify-icon icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <iconify-icon icon="ic:baseline-arrow-drop-down" class="iq-arrow-right arrow-hover"></iconify-icon>
+                                    <span class="bg_green squre_icon"><iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon></span><span>Accounting</span>
+                                </a>
+                                <ul id="accounting" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="uil:invoice"></iconify-icon></span><span>Invoices</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="fluent:payment-32-regular"></iconify-icon></span><span>Payments</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="ri:bank-line"></iconify-icon></span><span>Banking</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="ep:memo"></iconify-icon></span><span>Credit memo</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="ep:memo"></iconify-icon></span><span>Debit memo</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="uil:bill"></iconify-icon></span><span>Quotations</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="material-symbols:settings-account-box-outline"></iconify-icon></span><span>Accounting system setup</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="material-symbols:account-tree-outline-rounded"></iconify-icon></span><span>Account receivables</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="material-symbols:payments-outline-rounded"></iconify-icon></span><span>Account payables</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="fluent:money-calculator-20-regular"></iconify-icon></span><span>Expense management</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="ion:print-outline"></iconify-icon></span><span>Print setup</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="#products" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                    <iconify-icon icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <iconify-icon icon="ic:baseline-arrow-drop-down" class="iq-arrow-right arrow-hover"></iconify-icon>
+                                    <span class="bg_darkblu squre_icon"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon></span><span>Inventory & Locations</span>
+                                </a>
+                                <ul id="products" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                    <li class="">
+                                        <a href="products-inventory.html">
+                                            <span class="squre_icon"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon></span><span>Inventory</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="products-locations.html">
+                                            <span class="squre_icon"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon></span><span>Locations</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- <li class=" ">
+                                <a href="#leads" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                    <iconify-icon icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <iconify-icon icon="ic:baseline-arrow-drop-down" class="iq-arrow-right arrow-hover"></iconify-icon>
+                                    <span class="bg_purple squre_icon"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon></span><span>Leads & Tickets</span>
+                                </a>
+                                <ul id="leads" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon></span><span>Leads</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="mdi:deal-outline"></iconify-icon></span><span>Deals</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="clarity:form-line"></iconify-icon></span><span>Form Builder</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="material-symbols:system-update-alt"></iconify-icon></span><span>CRM system setup</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="carbon:cloud-service-management"></iconify-icon></span><span>Ticket management</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li> -->
+                            <!-- <li class=" ">
+                                <a href="#projects" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                    <iconify-icon icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <iconify-icon icon="ic:baseline-arrow-drop-down" class="iq-arrow-right arrow-hover"></iconify-icon>
+                                    <span class="bg_red squre_icon"><iconify-icon icon="eos-icons:project-outlined"></iconify-icon></span><span>Projects</span>
+                                </a>
+                                <ul id="projects" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="eos-icons:project-outlined"></iconify-icon></span><span>Projects</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="fe:list-task"></iconify-icon></span><span>Task</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="ic:round-more-time"></iconify-icon></span><span>Timesheet</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="material-symbols:calendar-month"></iconify-icon></span><span>Task Calendar</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="fluent-mdl2:trackers"></iconify-icon></span><span>Tracker</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="mdi:report-bell-curve"></iconify-icon></span><span>Project report</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">
+                                            <span class="squre_icon"><iconify-icon icon="octicon:project-roadmap-24"></iconify-icon></span><span>Project system setup</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li> -->
+                        </ul>
+                    </nav>
+                    <div class="sidebar-addnew">
+                        <nav class="iq-sidebar-menu">
+                            <ul id="iq-sidebar-toggle" class="iq-menu">
+                                <li>
+                                    <a type="button" data-bs-toggle="offcanvas" href="#offcanvasFilter" role="button" aria-controls="offcanvasFilter">
+                                        <!-- <iconify-icon style="opacity: 0;" icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon> -->
+                                        <span class="squre_icon"><iconify-icon icon="material-symbols:add-rounded"></iconify-icon></span><span>Manage applications</span>
+                                    </a>
+                                    <ul id="page-files" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle"></ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="sidebar-bottom">
+                    <nav class="iq-sidebar-menu">
+                        <ul id="iq-sidebar-toggle" class="iq-menu">
+                            <li>
+                                <a href="empty-team-managment.html">
+                                    <iconify-icon style="opacity: 0;" icon="ic:baseline-arrow-right" class="iq-arrow-right arrow-active"></iconify-icon>
+                                    <span class="bg_red squre_icon"><iconify-icon icon="fluent:people-team-16-regular"></iconify-icon></span><span>Team Management</span>
+                                </a>
+                                <ul id="page-files" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle"></ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="iq-top-navbar">
+                <div class="iq-navbar-custom">
+                    <nav class="navbar navbar-expand-lg navbar-light p-0">
+                        <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
+                            <i class="ri-menu-line wrapper-menu"></i>
+                            <a href="index.html" class="header-logo">
+                                <img src="assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo" />
+                                <img src="assets/images/logo-white.png" class="img-fluid rounded-normal darkmode-logo" alt="logo" />
+                            </a>
+                        </div>
+                        <div class="iq-search-bar device-search">
+                            <!-- <form>
+                                <div class="input-prepend input-append">
+                                    <div class="btn-group">
+                                        <label class="dropdown-toggle searchbox" data-toggle="dropdown">
+                                            <input class="dropdown-toggle search-query text search-input" type="text" placeholder="Type here to search..." /><span class="search-replace"></span>
+                                            <a class="search-link" href="#"><i class="ri-search-line"></i></a>
+                                            <span class="caret"></span>
+                                        </label>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item bg_yellow squre_icon"><iconify-icon icon="tabler:brand-abstract"></iconify-icon>Clients & Vendors</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item squre_icon bg_green"><iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon>Accounting</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item squre_icon bg_purple"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon>Leads & Tickets</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item squre_icon bg_red"><iconify-icon icon="eos-icons:project-outlined"></iconify-icon>Projects</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item squre_icon bg_darkblu"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon>Products & Inventory</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item squre_icon bg_gray"><iconify-icon icon="ic:twotone-warehouse"></iconify-icon>Warehouse</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="item squre_icon bg_blue"><iconify-icon icon="fluent:people-team-16-regular"></iconify-icon>Team Management</div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form> -->
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <!-- <div class="change-mode">
+                                <div class="custom-control custom-switch custom-switch-icon custom-control-inline">
+                                    <div class="custom-switch-inner">
+                                        <p class="mb-0"></p>
+                                        <input type="checkbox" class="custom-control-input" id="dark-mode" data-active="true" />
+                                        <label class="custom-control-label" for="dark-mode" data-mode="toggle">
+                                            <span class="switch-icon-left"><i class="a-left"></i></span>
+                                            <span class="switch-icon-right"><i class="a-right"></i></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+                                <i class="ri-menu-3-line"></i>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto navbar-list align-items-center">
+                                    <li class="nav-item nav-icon search-content">
+                                        <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="ri-search-line"></i>
+                                        </a>
+                                        <div class="iq-search-bar iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownSearch">
+                                            <form action="#" class="searchbox p-2">
+                                                <div class="form-group mb-0 position-relative">
+                                                    <input type="text" class="text search-input font-size-12" placeholder="type here to search..." />
+                                                    <a href="#" class="search-link"><i class="las la-search"></i></a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                    <!-- <li class="nav-item nav-icon dropdown">
+                                        <a href="#" class="search-toggle dropdown-toggle circle-hover" id="dropdownMenuButton01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="ri-question-line"></i>
+                                        </a>
+                                        <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton01">
+                                            <div class="card shadow-none m-0">
+                                                <div class="card-body p-0">
+                                                    <a href="#" class="iq-sub-card pt-0"><i class="ri-questionnaire-line"></i>Help</a>
+                                                    <a href="#" class="iq-sub-card"><i class="ri-recycle-line"></i>Training</a>
+                                                    <a href="#" class="iq-sub-card"><i class="ri-refresh-line"></i>Updates</a>
+                                                    <a href="#" class="iq-sub-card"><i class="ri-service-line"></i>Terms and Policy</a>
+                                                    <a href="#" class="iq-sub-card"><i class="ri-feedback-line"></i>Send Feedback</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                    <li class="nav-item nav-icon dropdown notify">
+                                        <button class="search-toggle dropdown-toggle circle-hover" id="dropdownMenuButton02" data-bs-toggle="offcanvas" href="#offcanvasNotification" role="button" aria-controls="offcanvasNotification">
+                                            <i class="ri-notification-line"></i>
+                                            <div class="Canny_Badge">99</div>
+                                        </button>
+                                        <!-- <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton02">
+                                            <div class="card shadow-none m-0">
+                                                <div class="card-body p-0 notification_box">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <h4>Notifications</h4>
+                                                            <a href="#">Mark as All Read</a>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <a href="#">
+                                                                <div class="card-item">
+                                                                    <span class="bg_yellow squre_icon"><iconify-icon icon="tabler:brand-abstract"></iconify-icon></span>
+                                                                    <div class="item-text">
+                                                                        <h3>New Invoice Generated</h3>
+                                                                        <p>2m ago</p>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#">
+                                                                <div class="card-item">
+                                                                    <span class="bg_green squre_icon"><iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon></span>
+                                                                    <div class="item-text">
+                                                                        <h3>New Password created</h3>
+                                                                        <p>2m ago</p>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#">
+                                                                <div class="card-item">
+                                                                    <span class="bg_purple squre_icon"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon></span>
+                                                                    <div class="item-text">
+                                                                        <h3>Your password has been saved.</h3>
+                                                                        <p>2m ago</p>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <a href="#">View all notifications</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </li>
+                                    <li class="nav-item nav-icon dropdown setting_drop">
+                                        <a href="#" class="search-toggle dropdown-toggle circle-hover" id="dropdownMenuButton02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="ri-settings-3-line"></i>
+                                        </a>
+                                        <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton02">
+                                            <div class="card shadow-none m-0">
+                                                <div class="card-body p-0">
+                                                    <div class="p-3">
+                                                        <!-- <a href="#" for="emailnotification" class="iq-sub-card pt-0 d-align">
+                                                            <span><iconify-icon icon="icon-park-outline:dark-mode"></iconify-icon> Dark Mode</span>
+                                                            <div class="change-mode">
+                                                                <div class="custom-control custom-switch custom-switch-icon custom-control-inline">
+                                                                    <div class="custom-switch-inner">
+                                                                        <p class="mb-0"></p>
+                                                                        <input type="checkbox" class="custom-control-input" id="dark-mode" data-active="true" />
+                                                                        <label class="custom-control-label" for="dark-mode" data-mode="toggle">
+                                                                            <span class="switch-icon-left"><i class="a-left"></i></span>
+                                                                            <span class="switch-icon-right"><i class="a-right"></i></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a> -->
+                                                        <a href="#" for="emailnotification" class="iq-sub-card pt-0 d-align">
+                                                            <span><iconify-icon icon="ic:baseline-mode-standby"></iconify-icon> Practice Mode</span>
+                                                            <div class="pr-mode">
+                                                                <input id="pr_mode" type="checkbox" hidden="hidden" />
+                                                                <label class="switch" for="pr_mode"></label>
+                                                            </div>
+                                                        </a>
+                                                        <a href="team-member.html" class="iq-sub-card pt-0 tm_bar" data-toggle="modal" data-target="#teamPopup" type="button"> <iconify-icon icon="fluent:people-team-16-regular"></iconify-icon> Team Management </a>
+                                                        <a href="settings.html" class="iq-sub-card pt-0"> <i class="ri-settings-3-line"></i> Business settings </a>
+                                                        <a href="settings.html" class="iq-sub-card pt-0"> <i class="ri-settings-3-line"></i> Account settings </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item nav-icon dropdown apps">
+                                        <a href="#" class="search-toggle dropdown-toggle circle-hover" id="dropdownMenuButton03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <iconify-icon icon="material-symbols:apps"></iconify-icon>
+                                        </a>
+                                        <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton03">
+                                            <div class="card mb-0">
+                                                <div class="card-body wspace">
+                                                    <div class="icons-container">
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_yellow squre_icon">
+                                                                <iconify-icon icon="tabler:brand-abstract"></iconify-icon>
+                                                            </span>
+                                                            <span>Clients & Vendors</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_green squre_icon">
+                                                                <iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon>
+                                                            </span>
+                                                            <span>Accounting</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_purple squre_icon">
+                                                                <iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon>
+                                                            </span>
+                                                            <span>Leads & Tickets</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_red squre_icon">
+                                                                <iconify-icon icon="eos-icons:project-outlined"></iconify-icon>
+                                                            </span>
+                                                            <span>Projects</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_darkblu squre_icon">
+                                                                <iconify-icon icon="icon-park-outline:ad-product"></iconify-icon>
+                                                            </span>
+                                                            <span>Products & Inventory</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_gray squre_icon">
+                                                                <iconify-icon icon="ic:twotone-warehouse"></iconify-icon>
+                                                            </span>
+                                                            <span>Warehouse</span>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="divider"></div>
+
+                                                    <div class="icons-container">
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_orange squre_icon">
+                                                                <iconify-icon icon="fluent:people-team-16-regular"></iconify-icon>
+                                                            </span>
+                                                            <span>Team Management</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_dpurple squre_icon">
+                                                                <iconify-icon icon="ri:apps-2-line"></iconify-icon>
+                                                            </span>
+                                                            <span>Manage Application</span>
+                                                        </a>
+
+                                                        <a href="#" class="link bg-hover">
+                                                            <span class="bg_light_Y squre_icon">
+                                                                <iconify-icon icon="iconoir:profile-circle"></iconify-icon>
+                                                            </span>
+                                                            <span>User Profile</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item nav-icon dropdown caption-content account_box">
+                                        <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <div class="caption profile-blue line-height">MJ</div>
+                                        </a>
+                                        <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton03">
+                                            <div class="card mb-0">
+                                                <div class="card-header d-flex justify-content-between mb-0">
+                                                    <div class="media my_media">
+                                                        <div class="rounded-circle iq-card-icon-small profile-green">
+                                                            MJ
+                                                        </div>
+                                                        <div class="media-body ml-3">
+                                                            <div class="media justify-content-between">
+                                                                <h6 class="mb-0">Mo. Jafar</h6>
+                                                            </div>
+                                                            <p class="mb-0 font-size-12">9898 059598</p>
+                                                        </div>
+                                                    </div>
+                                                    <a href="user-settings.html">User Settings</a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="profile-header">
+                                                        <div class="profile-details mt-4 pt-4 border-top"></div>
+                                                        <a href="#" class="account">
+                                                            <div class="media align-items-center">
+                                                                <div class="rounded-circle iq-card-icon-small profile-yellow">
+                                                                    US
+                                                                </div>
+                                                                <div class="media-body ml-2">
+                                                                    <div class="media justify-content-between">
+                                                                        <h6 class="mb-0">Unesync</h6>
+                                                                        <p class="mb-0 font-size-12"><i>Active</i></p>
+                                                                    </div>
+                                                                    <!-- <p class="mb-0 font-size-12">9898 059598</p> -->
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="account">
+                                                            <div class="media align-items-center">
+                                                                <div class="rounded-circle iq-card-icon-small profile-red">
+                                                                    DS
+                                                                </div>
+                                                                <div class="media-body ml-2">
+                                                                    <div class="media justify-content-between">
+                                                                        <h6 class="mb-0">Decimal Space</h6>
+                                                                        <p class="mb-0 font-size-12"><i></i></p>
+                                                                    </div>
+                                                                    <!-- <p class="mb-0 font-size-12">9898 059598</p> -->
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="profile-details mt-2 pt-4 border-top"></div>
+                                                        <div class="st_menu">
+                                                            <a href="#" class="standerd_menu"> <iconify-icon icon="material-symbols:add-rounded"></iconify-icon>&nbsp;&nbsp;&nbsp; Create New Business </a>
+                                                            <a href="#" class="standerd_menu tm">
+                                                                <iconify-icon icon="fluent:people-team-16-regular"></iconify-icon>
+                                                                Team Management
+                                                            </a>
+                                                            <a href="#" class="standerd_menu">
+                                                                <svg height="24" viewBox="0 0 24 24" width="24" focusable="false" class="NMm5M">
+                                                                    <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"></path>
+                                                                    <path d="M0 0h24v24H0z" fill="none"></path>
+                                                                </svg>
+                                                                Sign out
+                                                            </a>
+                                                        </div>
+                                                        <div class="termsand">
+                                                            <a target="_blank" href="#">Privacy Policy</a>
+                                                            <span class="OtBgcb">&nbsp;•&nbsp;</span>
+                                                            <a target="_blank" href="#">Terms of Service</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="content-page gray_bg">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 flush">
+                            <div class="page_head">
+                                <div class="actions_bar">
+                                    <div class="filter_main">
+                                        <span class="bg_yellow squre_icon"><iconify-icon icon="tabler:brand-abstract"></iconify-icon></span>
+                                        <select class="js-states form-control nosearch">
+                                            <option value="1">All Customers (10)</option>
+                                            <option value="2">GST Customers (5)</option>
+                                            <option value="2">Non GST Customers (5)</option>
+                                        </select>
+                                    </div>
+                                    <div class="action_btns">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Action
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#importPopup"><iconify-icon icon="pajamas:import"></iconify-icon> Import Item</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exportPopup"><iconify-icon icon="pajamas:export"></iconify-icon> Export Item</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- <button class="subcta" type="button" data-toggle="modal" data-target="#importPopup"><iconify-icon icon="pajamas:import"></iconify-icon> Import Customers</button>
+                                        <button class="subcta" type="button" data-toggle="modal" data-target="#exportPopup"><iconify-icon icon="pajamas:export"></iconify-icon> Export Customers</button> -->
+                                        <button type="button" id="opencreatecustomer"><iconify-icon icon="pajamas:plus"></iconify-icon> Create Customers</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="comn_wrapper">
+                                <div class="table_card">
+                                    <div class="thead">
+                                        <div class="row justify-content-between">
+                                            <div class="col-sm-6 col-md-6">
+                                                <div id="user_list_datatable_info" class="dataTables_filter">
+                                                    <!-- <h2>Customer Management</h2> -->
+                                                    <div class="show_check">
+                                                        <button class="export">Export Selected Customer(s)</button>
+                                                        <button class="delete">Delete</button>
+                                                        <span>1 Customer Selected</span>
+                                                    </div>
+                                                    <form class="mr-3 position-relative">
+                                                        <div class="form-group mb-0">
+                                                            <input type="search" class="form-control" id="search_field_filter" placeholder="Search" aria-controls="user-list-table" />
+                                                            <iconify-icon icon="carbon:search"></iconify-icon>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <div class="user-list-files d-flex">
+                                                    <a class="bg-primary" data-bs-toggle="offcanvas" href="#offcanvasFilter" role="button" aria-controls="offcanvasFilter">
+                                                        <iconify-icon icon="material-symbols:filter-alt-outline"></iconify-icon> Filter
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table_upper_wrapper">
+                                        <div class="add_field_drop">
+                                            <a href="#" class="search-toggle dropdown-toggle circle-hover" id="dropdownMenuButton01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <iconify-icon icon="pajamas:plus"></iconify-icon>
+                                            </a>
+                                            <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton01">
+                                                <div class="card shadow-none m-0">
+                                                    <div class="card-body p-0">
+                                                        <div class="p-3">
+                                                            <a href="#" class="iq-sub-card pt-0">
+                                                                <div class="sd_check">
+                                                                    <input type="checkbox" name="layout" id="showshipping" checked />
+                                                                    <label class="pull-right text" for="showshipping">Business/Customer name</label>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="iq-sub-card pt-0">
+                                                                <div class="sd_check">
+                                                                    <input type="checkbox" name="layout" id="showshipping1" checked />
+                                                                    <label class="pull-right text" for="showshipping1">GST</label>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="iq-sub-card pt-0">
+                                                                <div class="sd_check">
+                                                                    <input type="checkbox" name="layout" id="showshipping2" checked />
+                                                                    <label class="pull-right text" for="showshipping2">Email</label>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="iq-sub-card pt-0">
+                                                                <div class="sd_check">
+                                                                    <input type="checkbox" name="layout" id="showshipping3" checked />
+                                                                    <label class="pull-right text" for="showshipping3">Nature of Business</label>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="iq-sub-card pt-0">
+                                                                <div class="sd_check">
+                                                                    <input type="checkbox" name="layout" id="showshipping4" />
+                                                                    <label class="pull-right text" for="showshipping4">Contact Person</label>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="iq-sub-card pt-0">
+                                                                <div class="sd_check">
+                                                                    <input type="checkbox" name="layout" id="showshipping5" />
+                                                                    <label class="pull-right text" for="showshipping5">Contact Number</label>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="iq-sub-card pt-0">
+                                                                <div class="sd_check">
+                                                                    <input type="checkbox" name="layout" id="showshipping5" checked />
+                                                                    <label class="pull-right text" for="showshipping5">UPI</label>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="iq-sub-card pt-0">
+                                                                <div class="sd_check">
+                                                                    <input type="checkbox" name="layout" id="showshipping5" checked />
+                                                                    <label class="pull-right text" for="showshipping5">Payment Terms</label>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table id="user-list-table" class="table" role="grid" aria-describedby="user-list-page-info">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" style="width: 4%;">
+                                                            <div class="sd_check">
+                                                                <input type="checkbox" name="layout" id="tb1" />
+                                                                <label class="pull-right text" for="tb1"></label>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col">Business/Customer name</th>
+                                                        <th scope="col">GST</th>
+                                                        <th scope="col">Email</th>
+                                                        <th scope="col">Nature of Business</th>
+                                                        <!-- <th scope="col">Contact Person</th>
+                                                        <th scope="col">Contact Number</th> -->
+                                                        <th scope="col">UPI</th>
+                                                        <th scope="col">Payment Terms</th>
+                                                        <th scope="col" style="width: 8%; text-align: right; padding-right: 3%;">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="sd_check">
+                                                                <input type="checkbox" name="layout" id="tb1" />
+                                                                <label class="pull-right text" for="tb1"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                                            Johan Prince
+                                                            <span class="veryfied" data-toggle="tooltip" data-placement="top" data-original-title="This is unesync user"><iconify-icon icon="mdi:tick-decagram"></iconify-icon></span>
+                                                        </td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">AAAAA0000A</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@gmail.com</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Services</td>
+                                                        <!-- <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Johan</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">(760) 756 7568</td> -->
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@okicici</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">15 Days</td>
+                                                        <td style="width: 8%; text-align: right; padding-right: 3%;">
+                                                            <div class="action_btn_a">
+                                                                <a href="#" class="edit_cta" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                                                <!-- <a href="#" class="del_cta"data-toggle="tooltip" data-placement="top" data-original-title="Delete"><iconify-icon icon="mingcute:delete-2-line"></iconify-icon></a> -->
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="sd_check">
+                                                                <input type="checkbox" name="layout" id="tb2" />
+                                                                <label class="pull-right text" for="tb2"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Johan Prince</td>
+                                                        <!-- <span class="untag"><abbr><iconify-icon icon="jam:info-f" rotate="180deg"></iconify-icon></abbr> Unverified</span> -->
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">AAAAA0000A</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@gmail.com</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Services</td>
+                                                        <!-- <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Johan</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">(760) 756 7568</td> -->
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@okicici</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">15 Days</td>
+                                                        <td style="width: 8%; text-align: right; padding-right: 3%;">
+                                                            <div class="action_btn_a">
+                                                                <a href="#" class="edit_cta" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                                                <!-- <a href="#" class="del_cta"data-toggle="tooltip" data-placement="top" data-original-title="Delete"><iconify-icon icon="mingcute:delete-2-line"></iconify-icon></a> -->
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="sd_check">
+                                                                <input type="checkbox" name="layout" id="tb3" />
+                                                                <label class="pull-right text" for="tb3"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                                            Johan Prince
+                                                            <span class="veryfied" data-toggle="tooltip" data-placement="top" data-original-title="This is unesync user"><iconify-icon icon="mdi:tick-decagram"></iconify-icon></span>
+                                                        </td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">AAAAA0000A</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@gmail.com</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Services</td>
+                                                        <!-- <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Johan</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">(760) 756 7568</td> -->
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@okicici</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">15 Days</td>
+                                                        <td style="width: 8%; text-align: right; padding-right: 3%;">
+                                                            <div class="action_btn_a">
+                                                                <a href="#" class="edit_cta" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                                                <!-- <a href="#" class="del_cta"data-toggle="tooltip" data-placement="top" data-original-title="Delete"><iconify-icon icon="mingcute:delete-2-line"></iconify-icon></a> -->
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="sd_check">
+                                                                <input type="checkbox" name="layout" id="tb4" />
+                                                                <label class="pull-right text" for="tb4"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Johan Prince</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">AAAAA0000A</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@gmail.com</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Services</td>
+                                                        <!-- <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Johan</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">(760) 756 7568</td> -->
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@okicici</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">15 Days</td>
+                                                        <td style="width: 8%; text-align: right; padding-right: 3%;">
+                                                            <div class="action_btn_a">
+                                                                <a href="#" class="edit_cta" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                                                <!-- <a href="#" class="del_cta"data-toggle="tooltip" data-placement="top" data-original-title="Delete"><iconify-icon icon="mingcute:delete-2-line"></iconify-icon></a> -->
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="sd_check">
+                                                                <input type="checkbox" name="layout" id="tb5" />
+                                                                <label class="pull-right text" for="tb5"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                                            Johan Prince
+                                                            <span class="veryfied" data-toggle="tooltip" data-placement="top" data-original-title="This is unesync user"><iconify-icon icon="mdi:tick-decagram"></iconify-icon></span>
+                                                        </td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">AAAAA0000A</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@gmail.com</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Services</td>
+                                                        <!-- <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Johan</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">(760) 756 7568</td> -->
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@okicici</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">15 Days</td>
+                                                        <td style="width: 8%; text-align: right; padding-right: 3%;">
+                                                            <div class="action_btn_a">
+                                                                <a href="#" class="edit_cta" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                                                <!-- <a href="#" class="del_cta"data-toggle="tooltip" data-placement="top" data-original-title="Delete"><iconify-icon icon="mingcute:delete-2-line"></iconify-icon></a> -->
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="sd_check">
+                                                                <input type="checkbox" name="layout" id="tb6" />
+                                                                <label class="pull-right text" for="tb6"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Johan Prince</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">AAAAA0000A</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@gmail.com</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Services</td>
+                                                        <!-- <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Johan</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">(760) 756 7568</td> -->
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@okicici</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">15 Days</td>
+                                                        <td style="width: 8%; text-align: right; padding-right: 3%;">
+                                                            <div class="action_btn_a">
+                                                                <a href="#" class="edit_cta" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                                                <!-- <a href="#" class="del_cta"data-toggle="tooltip" data-placement="top" data-original-title="Delete"><iconify-icon icon="mingcute:delete-2-line"></iconify-icon></a> -->
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="sd_check">
+                                                                <input type="checkbox" name="layout" id="tb7" />
+                                                                <label class="pull-right text" for="tb7"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Johan Prince</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">AAAAA0000A</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@gmail.com</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Services</td>
+                                                        <!-- <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Johan</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">(760) 756 7568</td> -->
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">johan12@okicici</td>
+                                                        <td data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">15 Days</td>
+                                                        <td style="width: 8%; text-align: right; padding-right: 3%;">
+                                                            <div class="action_btn_a">
+                                                                <a href="#" class="edit_cta" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                                                <!-- <a href="#" class="del_cta"data-toggle="tooltip" data-placement="top" data-original-title="Delete"><iconify-icon icon="mingcute:delete-2-line"></iconify-icon></a> -->
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tfooter">
+                                        <div id="user-list-page-info" class="col-md-6">
+                                            <span>Showing 1 to 5 of 5 Customers</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination justify-content-end mb-0">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                                    </li>
+                                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">Next</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Customer Offcanvas -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                </button>
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Johan Prince</h5>
+                <div class="card-header-toolbar">
+                    <div class="dropdown">
+                        <span class="dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-expanded="true">
+                            <i class="ri-more-fill"></i>
+                        </span>
+                        <div
+                            class="dropdown-menu dropdown-menu-right"
+                            aria-labelledby="dropdownMenuButton2"
+                            x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-140px, 24px, 0px);"
+                        >
+                            <!-- <a class="dropdown-item" href="#">Edit Customer</a> -->
+                            <a class="dropdown-item" href="#">Merge with another Customer</a>
+                            <a class="dropdown-item" href="#">Delete Customer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offcanvas-body">
+                <div class="offcanvas_details">
+                    <div class="od_card">
+                        <div class="od_card_header">
+                            <h3>Customer Details</h3>
+                            <a href="#" class="edit_btn">Edit</a>
+                        </div>
+                        <div class="od_card_body">
+                            <ul>
+                                <li>
+                                    <label for="">Business/Customer name</label>
+                                    <input type="text" name="" value="Johan Prince" id="" disabled />
+                                    <!-- <span>Johan Prince</span> -->
+                                </li>
+                                <li>
+                                    <label for="">Email</label>
+                                    <input type="email" name="" value="johan12@gmail.com" id="" disabled />
+                                    <!-- <span>johan12@gmail.com</span> -->
+                                </li>
+                                <li>
+                                    <label for="">Nature of Business</label>
+                                    <input type="text" name="" value="Services" id="" disabled />
+                                    <!-- <span>Services</span> -->
+                                </li>
+                                <li>
+                                    <label for="">Contact Person</label>
+                                    <input type="text" name="" value="Johan Prince" id="" disabled />
+                                    <!-- <span>Johan Prince</span> -->
+                                </li>
+                                <li>
+                                    <label for="">Contact Number</label>
+                                    <input type="text" name="" value="+91 7858765958" id="" disabled />
+                                    <!-- <span>+91 7858765958</span> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="od_card">
+                        <div class="od_card_header">
+                            <h3>Address & Shipping Details</h3>
+                            <a href="#" class="edit_btn">Edit</a>
+                        </div>
+                        <div class="od_card_body">
+                            <ul>
+                                <li>
+                                    <label for="" class="mtitle">Main Address</label>
+                                    <label for="">Street Address</label>
+                                    <span>71, H Cross Margosa Road, Malleshwaram</span>
+                                </li>
+                                <li>
+                                    <label for="">Country</label>
+                                    <select class="form-select" aria-label="Default select example" disabled>
+                                        <option selected>India</option>
+                                        <option value="1">Australia</option>
+                                        <option value="2">China</option>
+                                        <option value="3">London</option>
+                                    </select>
+                                    <!-- <span>India</span> -->
+                                </li>
+                                <li>
+                                    <label for="">State</label>
+                                    <select class="form-select" aria-label="Default select example" disabled>
+                                        <option selected>Maharashtra</option>
+                                        <option value="1">Gujarat</option>
+                                        <option value="2">Surat</option>
+                                    </select>
+                                    <!-- <span>Maharashtra</span> -->
+                                </li>
+                                <li>
+                                    <label for="" class="mtitle">Shipping Details</label>
+                                    <label for="">Street Address</label>
+                                    <span>71, H Cross Margosa Road, Malleshwaram</span>
+                                </li>
+                                <li>
+                                    <label for="">Country</label>
+                                    <select class="form-select" aria-label="Default select example" disabled>
+                                        <option selected>India</option>
+                                        <option value="1">Australia</option>
+                                        <option value="2">China</option>
+                                        <option value="3">London</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label for="">State</label>
+                                    <select class="form-select" aria-label="Default select example" disabled>
+                                        <option selected>Maharashtra</option>
+                                        <option value="1">Gujarat</option>
+                                        <option value="2">Surat</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label for="">Postal Code / Zip Code</label>
+                                    <span>400021</span>
+                                </li>
+                                <li>
+                                    <label for="">Business GSTIN</label>
+                                    <span>AAAAA0000A</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="od_card">
+                        <div class="od_card_header">
+                            <h3>Taxation Information</h3>
+                            <a href="#" class="edit_btn">Edit</a>
+                        </div>
+                        <div class="od_card_body">
+                            <ul>
+                                <li>
+                                    <label for="">PAN Number</label>
+                                    <span>AAAAA0000A</span>
+                                </li>
+                                <li>
+                                    <label for="">GST</label>
+                                    <span>AAAAA0000A</span>
+                                </li>
+                                <li>
+                                    <label for="">Is MSME?</label>
+                                    <span>NO</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="od_card">
+                        <div class="od_card_header">
+                            <h3>Payment Details</h3>
+                            <a href="#" class="edit_btn">Edit</a>
+                        </div>
+                        <div class="od_card_body">
+                            <ul>
+                                <li>
+                                    <label for="">UPI</label>
+                                    <span>johan12@okicici</span>
+                                </li>
+                                <li>
+                                    <label for="">Payment Terms</label>
+                                    <span>15 Days</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="od_card last">
+                        <div class="od_card_header">
+                            <h3>File Upload</h3>
+                            <a href="#" class="edit_btn">Upload Files</a>
+                        </div>
+                        <div class="od_card_body">
+                            <ul>
+                                <li>
+                                    <div class="file_item">
+                                        <div>
+                                            <span>
+                                                <img src="assets/images/login_artwork.jpg" alt="" />
+                                            </span>
+                                            <h6>untitle.png</h6>
+                                        </div>
+                                        <div class="iabtn">
+                                            <a href="#"><iconify-icon icon="mingcute:delete-2-line"></iconify-icon></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="file_item">
+                                        <div>
+                                            <span>
+                                                <img src="assets/images/login_artwork.jpg" alt="" />
+                                            </span>
+                                            <h6>untitle.png</h6>
+                                        </div>
+                                        <div class="iabtn">
+                                            <a href="#"><iconify-icon icon="mingcute:delete-2-line"></iconify-icon></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="file_item">
+                                        <div>
+                                            <span>
+                                                <img src="assets/images/login_artwork.jpg" alt="" />
+                                            </span>
+                                            <h6>untitle.png</h6>
+                                        </div>
+                                        <div class="iabtn">
+                                            <a href="#"><iconify-icon icon="mingcute:delete-2-line"></iconify-icon></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bottom_bar_d">
+                        <a href="#"><iconify-icon icon="mingcute:delete-2-line"></iconify-icon> Delete Customer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Filters Offcanvas -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasFilter" aria-labelledby="offcanvasFilterLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                </button>
+                <h5 class="offcanvas-title" id="offcanvasFilterLabel">Add Filters</h5>
+                <span>&nbsp;</span>
+                <!-- <div class="card-header-toolbar">
+                    <div class="dropdown">
+                        <span class="dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-expanded="true">
+                            <i class="ri-more-fill"></i>
+                        </span>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton2" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-140px, 24px, 0px);">
+                            <a class="dropdown-item" href="#">Edit Customer</a>
+                            <a class="dropdown-item" href="#">Merge with another Customer</a>
+                            <a class="dropdown-item" href="#">Delete Customer</a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="offcanvas-body">
+                <div class="offcanvas_details">
+                    <div class="ft_item">
+                        <div class="od_card">
+                            <div class="od_card_header">
+                                <h3>Business/Customer name</h3>
+                            </div>
+                            <div class="od_card_body">
+                                <input type="text" name="" id="" placeholder="Search by Business/Customer name" />
+                            </div>
+                        </div>
+
+                        <div class="od_card">
+                            <div class="od_card_header">
+                                <h3>Nature of Business</h3>
+                            </div>
+                            <div class="od_card_body">
+                                <input type="text" name="" id="" placeholder="Search by Nature of Business" />
+                            </div>
+                        </div>
+
+                        <div class="od_card">
+                            <div class="od_card_header">
+                                <h3>Payment Terms</h3>
+                            </div>
+                            <div class="od_card_body">
+                                <input type="text" name="" id="" placeholder="Search by Payment Terms" />
+                            </div>
+                        </div>
+
+                        <div class="od_card">
+                            <div class="od_card_header">
+                                <h3>Customer have GST?</h3>
+                            </div>
+                            <div class="od_card_body">
+                                <div class="align_check">
+                                    <div class="sd_check">
+                                        <input type="radio" name="layout" id="yes" />
+                                        <label class="pull-right text" for="yes">Yes</label>
+                                    </div>
+                                    <div class="sd_check">
+                                        <input type="radio" name="layout" id="no" />
+                                        <label class="pull-right text" for="no">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom_bar_d filter_bar">
+                        <p>15 Results shown</p>
+                        <span>
+                            <a href="#" class="normal_style">Reset</a>
+                            <a href="#" class="cm_style">Apply</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create Customer - Bottom Full Screen Popup -->
+        <div class="cibsp" id="createcustomer">
+            <div class="cibsp_header">
+                <a href="#" class="close_cibsp" id="close_cibsp"><iconify-icon icon="material-symbols:close-rounded"></iconify-icon></a>
+                <h2>Create Customer</h2>
+                <span>&nbsp;</span>
+                <!-- <button>Save</button> -->
+            </div>
+            <div class="mini_continer">
+                <div class="cibsp_body">
+                    <div class="inner_model_wrapper">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        General Information
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="gst_btns">
+                                            <a href="#" class="have_gst">
+                                                <span><img src="assets/images/taxes.png" /></span>
+                                                Customer have <br />
+                                                GST number
+                                            </a>
+                                            <a href="#" class="no_gst active">
+                                                <span><img src="assets/images/taxes.png" /></span>
+                                                Customer don't <br />
+                                                have GST number
+                                            </a>
+                                        </div>
+
+                                        <div class="row hide_gst">
+                                            <div class="form-group col-sm-12 flush">
+                                                <label>
+                                                    <input type="text" required="" id="" placeholder="GST Number"/>
+                                                    <span>GST Number</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group withbutton col-sm-12">
+                                                <label>
+                                                    <input type="text" required="" id="" placeholder="Business/Customer name"/>
+                                                    <span>Business/Customer name</span>
+                                                </label>
+                                                <div class="text_center">
+                                                    <button type="button" class="btn_comman">Create Customer</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="customer_created hide_default">
+                                            <div class="cc_card">
+                                                <lottie-player
+                                                    src="https://lottie.host/a6963a1c-1049-4992-a95a-d016d2d07948/fVRIDbvFti.json"
+                                                    background="transparent"
+                                                    speed="1"
+                                                    style="width: 100px; height: 100px;"
+                                                    loop
+                                                    autoplay
+                                                ></lottie-player>
+                                                <div class="content_cc">
+                                                    <h6>Customer created successfully</h6>
+                                                    <p>This customer is created successfully now you can skip and go to dashboard</p>
+                                                    <a href="#">Go to dashboard</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Address & Shipping Details <span>(Optional)</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <br />
+                                        <h4>Address</h4>
+
+                                        <div class="row">
+                                            <div class="form-group col-sm-12">
+                                                <label>
+                                                    <input type="text" required="" id="" placeholder="Street Address"/>
+                                                    <span>Street Address</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-sm-6">
+                                                <select class="js-example-placeholder-single-cuntry js-states form-control">
+                                                    <option></option>
+                                                    <option value="1">India</option>
+                                                    <option value="2">Canada</option>
+                                                    <option value="2">United State</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-sm-6">
+                                                <select class="js-example-placeholder-single-state js-states form-control">
+                                                    <option></option>
+                                                    <option value="5">Andhra Pradesh</option>
+                                                    <option value="6">Arunachal Pradesh</option>
+                                                    <option value="7">Assam</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-sm-12">
+                                                <label>
+                                                    <input type="text" required="" id="" placeholder="Postal Code / Zip Code"/>
+                                                    <span>Postal Code / Zip Code</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-sm-6">
+                                                <label>
+                                                    <input type="email" required="" id="" placeholder="Email" />
+                                                    <span>Email</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group col-sm-6">
+                                                <label>
+                                                    <input type="text" required="" id="" placeholder="Nature of Business"/>
+                                                    <span>Nature of Business</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-sm-6">
+                                                <label>
+                                                    <input type="text" required="" id="" placeholder="Contact Person" />
+                                                    <span>Contact Person</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group col-sm-6 cpnumber">
+                                                <label class="phone">
+                                                    <input type="text" required="" id="phone" placeholder="Contact Number" />
+                                                    <span>Contact Number</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <market-divider class="market-divider" margin="medium" hydrated=""></market-divider>
+
+                                        <div class="shipping_info">
+                                            <br />
+                                            <h4>Shipping Details</h4>
+
+                                            <div class="sd_check">
+                                                <input type="checkbox" name="layout" id="saad" />
+                                                <label class="pull-right text" for="saad">Same as address</label>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group col-sm-12">
+                                                    <label>
+                                                        <input type="text" required="" id="" placeholder="Street Address"/>
+                                                        <span>Street Address</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group col-sm-6">
+                                                    <select class="js-example-placeholder-single-cuntry js-states form-control">
+                                                        <option></option>
+                                                        <option value="1">India</option>
+                                                        <option value="2">Canada</option>
+                                                        <option value="2">United State</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-sm-6">
+                                                    <select class="js-example-placeholder-single-state js-states form-control">
+                                                        <option></option>
+                                                        <option value="5">Andhra Pradesh</option>
+                                                        <option value="6">Arunachal Pradesh</option>
+                                                        <option value="7">Assam</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group col-sm-6">
+                                                    <label>
+                                                        <input type="text" required="" id="" placeholder="Postal Code / Zip Code"/>
+                                                        <span>Postal Code / Zip Code</span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group col-sm-6">
+                                                    <label>
+                                                        <input type="text" required="" id="" placeholder="Business GSTIN" />
+                                                        <span>Business GSTIN</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Taxation Information <span>(Optional)</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <br />
+                                        <div class="row">
+                                            <div class="input-group form-group col-sm-12 full_in_icon">
+                                                <label>
+                                                    <input type="text" required="" id="" aria-label="GST" aria-describedby="basic-addon2" placeholder="GST Number" />
+                                                    <span>GST Number</span>
+                                                </label>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2"><img src="assets/images/gst-icon.png" alt="" /></span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group form-group col-sm-12 full_in_icon">
+                                                <label>
+                                                    <input type="text" required="" id="" aria-label="GST" aria-describedby="basic-addon2" placeholder="PAN" />
+                                                    <span>PAN</span>
+                                                </label>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2"><img src="assets/images/id-card.png" alt="" /></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sd_check">
+                                            <input type="checkbox" name="layout" id="ismsme" />
+                                            <label class="pull-right text" for="ismsme">Is MSME?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Payment Details <span>(Optional)</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <br />
+
+                                        <div class="row">
+                                            <div class="form-group col-sm-12">
+                                                <label>
+                                                    <input type="text" required="" id="" placeholder="Bank Name"/>
+                                                    <span>Bank Name</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-sm-6">
+                                                <label>
+                                                    <input type="text" required="" id="" placeholder="IFSC code" />
+                                                    <span>IFSC code</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group col-sm-6">
+                                                <label>
+                                                    <input type="text" required="" id="" placeholder="Account Number"/>
+                                                    <span>Account Number</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-sm-12">
+                                                <label>
+                                                    <input type="text" required="" id="" placeholder="Branch Address"/>
+                                                    <span>Branch Address</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-sm-6">
+                                                <select class="js-example-placeholder-single-cuntry js-states form-control">
+                                                    <option></option>
+                                                    <option value="1">India</option>
+                                                    <option value="2">Canada</option>
+                                                    <option value="2">United State</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-sm-6">
+                                                <select class="js-example-placeholder-single-state js-states form-control">
+                                                    <option></option>
+                                                    <option value="5">Andhra Pradesh</option>
+                                                    <option value="6">Arunachal Pradesh</option>
+                                                    <option value="7">Assam</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-sm-12">
+                                                <label>
+                                                    <input type="text" required="" id="" placeholder="Postal Code / Zip Code"/>
+                                                    <span>Postal Code / Zip Code</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-group form-group col-sm-6">
+                                                <label>
+                                                    <input type="text" required="" id="" aria-label="UPI" aria-describedby="basic-addon2" placeholder="UPI"/>
+                                                    <span>UPI</span>
+                                                </label>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2"><img src="assets/images/upiicon.png" alt="" /></span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group form-group col-sm-6">
+                                                <label>
+                                                    <input type="text" required="" id="" aria-label="Payment Terms" aria-describedby="basic-addon2" placeholder="Payment Terms" />
+                                                    <span>Payment Terms</span>
+                                                </label>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">Days</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        File Upload <span>(Optional)</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <br />
+                                        <h4>You can only upload 5 files at time.</h4>
+                                        <div class="dropzone dz-default dz-message hide-d" id="desktop_media"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Import Customer Popup -->
+        <div class="modal fade twoside_modal" id="importPopup" tabindex="-1" role="dialog" aria-labelledby="importPopupLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                    </button>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5 col-sm-5 col-xs-12">
+                                <div class="team_list">
+                                    <div class="tl_header">
+                                        <h5>Process</h5>
+                                    </div>
+                                    <div class="tlist">
+                                        <ul class="step-tab-items">
+                                            <li class="step-item active">
+                                                <span>
+                                                    <iconify-icon icon="material-symbols:download"></iconify-icon>
+                                                </span>
+                                                <div class="side_text">
+                                                    <h6>Download Template</h6>
+                                                    <p>Download pre-made templates</p>
+                                                </div>
+                                            </li>
+                                            <li class="step-item">
+                                                <span>
+                                                    <iconify-icon icon="gala:data"></iconify-icon>
+                                                </span>
+                                                <div class="side_text">
+                                                    <h6>Data Formatting</h6>
+                                                    <p>Format your data</p>
+                                                </div>
+                                            </li>
+                                            <li class="step-item">
+                                                <span>
+                                                    <iconify-icon icon="material-symbols:file-copy-outline"></iconify-icon>
+                                                </span>
+                                                <div class="side_text">
+                                                    <h6>Select Files</h6>
+                                                    <p>Select your files here</p>
+                                                </div>
+                                            </li>
+                                            <li class="step-item">
+                                                <span>
+                                                    <iconify-icon icon="material-symbols:assignment-outline"></iconify-icon>
+                                                </span>
+                                                <div class="side_text">
+                                                    <h6>Finish</h6>
+                                                    <p>Verify your files</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-sm-7 col-xs-12 flush">
+                                <div class="shinvite">
+                                    <div class="shi_header">
+                                        <h5>Import Customer</h5>
+                                        <a href="#"><iconify-icon icon="ph:info"></iconify-icon></a>
+                                    </div>
+                                    <div class="shi_body">
+                                        <div class="steps">
+                                            <div class="step-tabs">
+                                                <div class="step-tab active" id="step-i1">
+                                                    <div class="templates">
+                                                        <h2>Use a template for easy importing</h2>
+                                                        <p>We've created a custom template based on your customer attributes.</p>
+                                                        <a href="#">Download Template</a>
+                                                    </div>
+
+                                                    <div class="form-submit text-right">
+                                                        <button class="form-btn" type="button" tab-target="step-i2">Next <iconify-icon icon="material-symbols:arrow-forward-rounded"></iconify-icon></button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="step-tab" id="step-i2">
+                                                    <div class="templates">
+                                                        <h2>Check your data format</h2>
+                                                        <p>We've created a custom data based on your customer attributes.</p>
+                                                        <div class="inner_cards">
+                                                            <div class="icards">
+                                                                <h6>Dates</h6>
+                                                                <p>Preferred formate are YYYY-MM-DD and MM-DD-YYYY.</p>
+                                                                <a href="#">Read more</a>
+                                                            </div>
+                                                            <div class="icards">
+                                                                <h6>Phone number</h6>
+                                                                <p>A country code will be added to all phone numbers without a country code</p>
+                                                                <a href="#">Read more</a>
+                                                            </div>
+                                                            <div class="icards">
+                                                                <h6>Birthday</h6>
+                                                                <p>Preferred formate are YYYY-MM-DD and MM-DD-YYYY.</p>
+                                                                <a href="#">Read more</a>
+                                                            </div>
+                                                            <div class="icards">
+                                                                <h6>Address</h6>
+                                                                <p>A country code will be added to all phone numbers without a country code</p>
+                                                                <a href="#">Read more</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-submit grid-2">
+                                                        <button type="button" class="form-btn" tab-target="step-i1"><iconify-icon icon="material-symbols:arrow-back-rounded"></iconify-icon> Previous</button>
+                                                        <button type="button" class="form-btn" tab-target="step-i3">Next <iconify-icon icon="material-symbols:arrow-forward-rounded"></iconify-icon></button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="step-tab" id="step-i3">
+                                                    <div class="form-submit grid-2">
+                                                        <button type="button" class="form-btn" tab-target="step-i2"><iconify-icon icon="material-symbols:arrow-back-rounded"></iconify-icon> Previous</button>
+                                                        <button type="button" class="form-btn" tab-target="step-i4">Next <iconify-icon icon="material-symbols:arrow-forward-rounded"></iconify-icon></button>
+                                                    </div>
+                                                </div>
+                                                <div class="step-tab" id="step-i4">
+                                                    <div class="form-submit grid-2">
+                                                        <button type="button" class="form-btn" tab-target="step-i3"><iconify-icon icon="material-symbols:arrow-back-rounded"></iconify-icon> Previous</button>
+                                                        <button type="submit" class="form-btn" data-dismiss="modal" aria-label="Close">Submit <iconify-icon icon="charm:tick"></iconify-icon></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ExportModel -->
+        <div class="modal fade twoside_modal" id="exportPopup" tabindex="-1" role="dialog" aria-labelledby="exportPopupLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                    </button>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <div class="shinvite">
+                                    <div class="shi_header">
+                                        <h5>Export Customers</h5>
+                                        <a href="#"><iconify-icon icon="ph:info"></iconify-icon></a>
+                                    </div>
+                                    <div class="shi_body">
+                                        <div class="grid">
+                                            <label class="card">
+                                                <input name="plan" class="radio" type="radio" checked />
+
+                                                <span class="plan-details">
+                                                    <img src="assets/images/pdf.png" alt="" />
+                                                    <h2>PDF</h2>
+                                                </span>
+                                            </label>
+                                            <label class="card">
+                                                <input name="plan" class="radio" type="radio" />
+
+                                                <span class="plan-details" aria-hidden="true">
+                                                    <img src="assets/images/excel.png" alt="" />
+                                                    <h2>Excel</h2>
+                                                </span>
+                                            </label>
+                                            <label class="card">
+                                                <input name="plan" class="radio" type="radio" />
+
+                                                <span class="plan-details" aria-hidden="true">
+                                                    <img src="assets/images/essay.png" alt="" />
+                                                    <h2>Tally</h2>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="shi_footer">
+                                        <button class="done_btn">Export</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Popup -->
+        <div class="modal fade twoside_modal" id="teamPopup" tabindex="-1" role="dialog" aria-labelledby="teamPopupLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                    </button>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5 col-sm-5 col-xs-12">
+                                <div class="team_list">
+                                    <div class="tl_header">
+                                        <h5>Team Members</h5>
+                                    </div>
+                                    <div class="tlist">
+                                        <div class="card-item">
+                                            <span class="circle_icon">R</span>
+                                            <div class="item-text">
+                                                <h3>Rohan Chopra</h3>
+                                                <!-- <p>Member</p> -->
+                                            </div>
+                                            <a href="#"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                        </div>
+                                        <div class="card-item">
+                                            <span class="circle_icon">R</span>
+                                            <div class="item-text">
+                                                <h3>Rohan Chopra</h3>
+                                                <!-- <p>Member</p> -->
+                                            </div>
+                                            <a href="#"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                        </div>
+                                        <div class="card-item">
+                                            <span class="circle_icon">R</span>
+                                            <div class="item-text">
+                                                <h3>Rohan Chopra</h3>
+                                                <!-- <p>Member</p> -->
+                                            </div>
+                                            <a href="#"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                        </div>
+                                        <div class="card-item">
+                                            <span class="circle_icon">R</span>
+                                            <div class="item-text">
+                                                <h3>Rohan Chopra</h3>
+                                                <!-- <p>Member</p> -->
+                                            </div>
+                                            <a href="#"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                        </div>
+                                        <div class="card-item">
+                                            <span class="circle_icon">R</span>
+                                            <div class="item-text">
+                                                <h3>Rohan Chopra</h3>
+                                                <!-- <p>Member</p> -->
+                                            </div>
+                                            <a href="#"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                        </div>
+                                        <div class="card-item">
+                                            <span class="circle_icon">R</span>
+                                            <div class="item-text">
+                                                <h3>Rohan Chopra</h3>
+                                                <!-- <p>Member</p> -->
+                                            </div>
+                                            <a href="#"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                        </div>
+                                        <div class="card-item">
+                                            <span class="circle_icon">R</span>
+                                            <div class="item-text">
+                                                <h3>Rohan Chopra</h3>
+                                                <!-- <p>Member</p> -->
+                                            </div>
+                                            <a href="#"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                        </div>
+                                        <div class="card-item">
+                                            <span class="circle_icon">R</span>
+                                            <div class="item-text">
+                                                <h3>Rohan Chopra</h3>
+                                                <!-- <p>Member</p> -->
+                                            </div>
+                                            <a href="#"><iconify-icon icon="material-symbols:edit"></iconify-icon> Edit</a>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="tlfooter">
+                                        <div class="card-item">
+                                            <span class="circle_icon"><iconify-icon icon="material-symbols:lock-outline"></iconify-icon></span>
+                                            <div class="item-text">
+                                                <h3>Restricted</h3>
+                                                <p>Only people with access can open with the link</p>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-sm-7 col-xs-12 flush">
+                                <div class="shinvite">
+                                    <div class="shi_header">
+                                        <h5>Sent Invite</h5>
+                                        <a href="#"><iconify-icon icon="ph:info"></iconify-icon></a>
+                                    </div>
+                                    <div class="shi_body">
+                                        <div class="search_in">
+                                            <input type="text" id="exist-values" class="tagged form-control" data-removeBtn="true" name="tag-2" value="" placeholder="Add people" />
+                                        </div>
+                                        <div class="add_message">
+                                            <textarea name="" id="" cols="30" rows="5" placeholder="Message"></textarea>
+                                        </div>
+                                        <h6>Applications</h6>
+                                        <div class="apps_list">
+                                            <ul>
+                                                <li>
+                                                    <h5>
+                                                        <span class="bg_yellow squre_icon"><iconify-icon icon="tabler:brand-abstract"></iconify-icon></span> Clients & Vendors
+                                                    </h5>
+                                                    <div class="selec_s">
+                                                        <select class="ddl-select" id="list" name="list">
+                                                            <option>No Access</option>
+                                                            <option value="1">Edit</option>
+                                                            <option value="2">View</option>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <h5>
+                                                        <span class="bg_green squre_icon"><iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon></span> Accounting
+                                                    </h5>
+                                                    <div class="selec_s">
+                                                        <select class="ddl-select" id="list1" name="list">
+                                                            <option>Give Access</option>
+                                                            <option value="1">Edit and View</option>
+                                                            <option value="2">Only View</option>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <h5>
+                                                        <span class="bg_purple squre_icon"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon></span> Leads & Tickets
+                                                    </h5>
+                                                    <div class="selec_s">
+                                                        <select class="ddl-select" id="list2" name="list">
+                                                            <option>Give Access</option>
+                                                            <option value="1">Edit and View</option>
+                                                            <option value="2">Only View</option>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <h5>
+                                                        <span class="bg_red squre_icon"><iconify-icon icon="eos-icons:project-outlined"></iconify-icon></span> Projects
+                                                    </h5>
+                                                    <div class="selec_s">
+                                                        <select class="ddl-select" id="list3" name="list">
+                                                            <option>Give Access</option>
+                                                            <option value="1">Edit and View</option>
+                                                            <option value="2">Only View</option>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <h5>
+                                                        <span class="bg_darkblu squre_icon"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon></span> Products & Inventory
+                                                    </h5>
+                                                    <div class="selec_s">
+                                                        <select class="ddl-select" id="list4" name="list">
+                                                            <option>Give Access</option>
+                                                            <option value="1">Edit and View</option>
+                                                            <option value="2">Only View</option>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <h5>
+                                                        <span class="bg_gray squre_icon"><iconify-icon icon="ic:twotone-warehouse"></iconify-icon></span> Warehouse
+                                                    </h5>
+                                                    <div class="selec_s">
+                                                        <select class="ddl-select" id="list5" name="list">
+                                                            <option>Give Access</option>
+                                                            <option value="1">Edit and View</option>
+                                                            <option value="2">Only View</option>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="shi_footer">
+                                        <span>
+                                            <button class="copy_link"><iconify-icon icon="ic:baseline-insert-link"></iconify-icon> Copy link</button>
+                                            <p><iconify-icon icon="mdi:tick-circle"></iconify-icon> Link Copied</p>
+                                        </span>
+                                        <button class="done_btn">Done</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="modal-header">
+                        <h5 class="modal-title" id="teamPopupLabel">Invite team</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Application Modal -->
+        <div class="modal fade comnapps_popup" id="addapplicationModel" tabindex="-1" aria-labelledby="addapplicationModel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                    </button>
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5" id="addapplicationModel">Add Applications</h2>
+                        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><iconify-icon icon="material-symbols:close-rounded"></iconify-icon></button> -->
+                    </div>
+                    <div class="modal-body">
+                        <!-- <h1>Welcome to Unesync</h1>
+                        <p>Let's start by choosing applications from below list...</p> -->
+                        <div class="select_area">
+                            <label class="plan basic-plan" for="app1">
+                                <a
+                                    tabindex="0"
+                                    role="button"
+                                    data-toggle="popover"
+                                    data-placement="top"
+                                    data-trigger="focus"
+                                    title=""
+                                    data-content="For smaller business, with simple salaries and pay schedules."
+                                    data-original-title="Clients & Vendors"
+                                >
+                                    <!-- <input checked type="checkbox" name="plan" id="app1" /> -->
+                                    <div class="plan-content">
+                                        <div class="btn_icon">
+                                            <span class="bg_yellow squre_icon"><iconify-icon icon="tabler:brand-abstract"></iconify-icon></span>
+                                            <button class="install_btn" type="button"><iconify-icon icon="material-symbols:add-rounded"></iconify-icon> Install</button>
+                                        </div>
+                                        <div class="plan-details">
+                                            <span>Clients & Vendors</span>
+                                            <p>For smaller business, with simple salaries and pay schedules.</p>
+                                            <span class="tag_free">Free</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </label>
+                            <label class="plan basic-plan" for="app2">
+                                <a
+                                    tabindex="0"
+                                    role="button"
+                                    data-toggle="popover"
+                                    data-placement="top"
+                                    data-trigger="focus"
+                                    title=""
+                                    data-content="For smaller business, with simple salaries and pay schedules."
+                                    data-original-title="Accounting"
+                                >
+                                    <!-- <input type="checkbox" name="plan" id="app2" /> -->
+                                    <div class="plan-content">
+                                        <div class="btn_icon">
+                                            <span class="bg_green squre_icon"><iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon></span>
+                                            <button class="install_btn green" type="button"><iconify-icon icon="charm:tick"></iconify-icon> Installed</button>
+                                        </div>
+                                        <div class="plan-details">
+                                            <span>Accounting</span>
+                                            <p>For smaller business, with simple salaries and pay schedules.</p>
+                                            <div class="tags">
+                                                <span class="tag_free">Free</span>
+                                                <span class="tag_inboost">
+                                                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                                                    <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_lfb13isu.json" background="transparent" speed="1" style="width: 25px; height: 25px;" loop autoplay></lottie-player>
+                                                    In-App Boost
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </label>
+                            <label class="plan basic-plan" for="app5">
+                                <a
+                                    tabindex="0"
+                                    role="button"
+                                    data-toggle="popover"
+                                    data-placement="top"
+                                    data-trigger="focus"
+                                    title=""
+                                    data-content="For smaller business, with simple salaries and pay schedules."
+                                    data-original-title="Products & Inventory"
+                                >
+                                    <!-- <input type="checkbox" name="plan" id="app5" /> -->
+                                    <div class="plan-content">
+                                        <div class="btn_icon">
+                                            <span class="bg_darkblu squre_icon"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon></span>
+                                            <button class="install_btn green" type="button"><iconify-icon icon="charm:tick"></iconify-icon> Installed</button>
+                                        </div>
+                                        <div class="plan-details">
+                                            <span>Products & Inventory</span>
+                                            <p>For smaller business, with simple salaries and pay schedules.</p>
+                                            <div class="tags">
+                                                <span class="tag_free">Free</span>
+                                                <span class="tag_inboost">
+                                                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                                                    <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_lfb13isu.json" background="transparent" speed="1" style="width: 25px; height: 25px;" loop autoplay></lottie-player>
+                                                    In-App Boost
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </label>
+
+                            <label class="plan basic-plan" for="app6">
+                                <a
+                                    tabindex="0"
+                                    role="button"
+                                    data-toggle="popover"
+                                    data-placement="bottom"
+                                    data-trigger="focus"
+                                    title=""
+                                    data-content="For smaller business, with simple salaries and pay schedules."
+                                    data-original-title="Warehouse"
+                                >
+                                    <!-- <input type="checkbox" name="plan" id="app6" /> -->
+                                    <div class="plan-content">
+                                        <div class="btn_icon">
+                                            <span class="bg_gray squre_icon"><iconify-icon icon="ic:twotone-warehouse"></iconify-icon></span>
+                                            <button class="install_btn" type="button"><iconify-icon icon="material-symbols:add-rounded"></iconify-icon> Install</button>
+                                        </div>
+                                        <div class="plan-details">
+                                            <span>Warehouse</span>
+                                            <p>For smaller business, with simple salaries and pay schedules.</p>
+                                            <span class="tag_cos">Coming Soon</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </label>
+                            <label class="plan basic-plan" for="app3">
+                                <a
+                                    tabindex="0"
+                                    role="button"
+                                    data-toggle="popover"
+                                    data-placement="bottom"
+                                    data-trigger="focus"
+                                    title=""
+                                    data-content="For smaller business, with simple salaries and pay schedules."
+                                    data-original-title="Leads & Tickets"
+                                >
+                                    <!-- <input type="checkbox" name="plan" id="app3" /> -->
+                                    <div class="plan-content">
+                                        <div class="btn_icon">
+                                            <span class="bg_purple squre_icon"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon></span>
+                                            <button class="install_btn" type="button"><iconify-icon icon="material-symbols:add-rounded"></iconify-icon> Install</button>
+                                        </div>
+                                        <div class="plan-details">
+                                            <span>Leads & Tickets</span>
+                                            <p>For smaller business, with simple salaries and pay schedules.</p>
+                                            <span class="tag_cos">Coming Soon</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </label>
+                            <label class="plan basic-plan" for="app4">
+                                <a
+                                    tabindex="0"
+                                    role="button"
+                                    data-toggle="popover"
+                                    data-placement="bottom"
+                                    data-trigger="focus"
+                                    title=""
+                                    data-content="For smaller business, with simple salaries and pay schedules."
+                                    data-original-title="Projects"
+                                >
+                                    <!-- <input type="checkbox" name="plan" id="app4" /> -->
+                                    <div class="plan-content">
+                                        <div class="btn_icon">
+                                            <span class="bg_red squre_icon"><iconify-icon icon="eos-icons:project-outlined"></iconify-icon></span>
+                                            <button class="install_btn" type="button"><iconify-icon icon="material-symbols:add-rounded"></iconify-icon> Install</button>
+                                        </div>
+                                        <div class="plan-details">
+                                            <span>Projects</span>
+                                            <p>For smaller business, with simple salaries and pay schedules.</p>
+                                            <span class="tag_cos">Coming Soon</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Crope Model -->
+        <div class="modal fade" id="cropImagePop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">
+                            Crop Image
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="upload-demo" class="center-block"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" id="cropImageBtn" class="btn btn-primary">Crop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification Offcanvas -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNotification" aria-labelledby="offcanvasNotificationLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <iconify-icon icon="material-symbols:close-rounded"></iconify-icon>
+                </button>
+                <h5 class="offcanvas-title" id="offcanvasNotificationLabel">Notifications</h5>
+                <span>&nbsp;</span>
+                <!-- <div class="card-header-toolbar">
+                    <div class="dropdown">
+                        <span class="dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-expanded="true">
+                            <i class="ri-more-fill"></i>
+                        </span>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton2" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-140px, 24px, 0px);">
+                            <a class="dropdown-item" href="#">Edit Customer</a>
+                            <a class="dropdown-item" href="#">Merge with another Customer</a>
+                            <a class="dropdown-item" href="#">Delete Customer</a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="offcanvas-body">
+                <div class="offcanvas_details">
+                    <div class="ft_item notification_box">
+                        <a href="#">
+                            <div class="card-item">
+                                <span class="bg_yellow squre_icon"><iconify-icon icon="tabler:brand-abstract"></iconify-icon></span>
+                                <div class="item-text">
+                                    <h3>New Invoice Generated</h3>
+                                    <p>2m ago</p>
+                                </div>
+                                <span class="close_icon"><iconify-icon icon="material-symbols:close-rounded"></iconify-icon></span>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card-item">
+                                <span class="bg_green squre_icon"><iconify-icon icon="material-symbols:account-balance-wallet-outline"></iconify-icon></span>
+                                <div class="item-text">
+                                    <h3>New Password created</h3>
+                                    <p>2m ago</p>
+                                </div>
+                                <span class="close_icon"><iconify-icon icon="material-symbols:close-rounded"></iconify-icon></span>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card-item">
+                                <span class="bg_purple squre_icon"><iconify-icon icon="material-symbols:leaderboard-outline-rounded"></iconify-icon></span>
+                                <div class="item-text">
+                                    <h3>Your password has been saved.</h3>
+                                    <p>2m ago</p>
+                                </div>
+                                <span class="close_icon"><iconify-icon icon="material-symbols:close-rounded"></iconify-icon></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="bottom_bar_d filter_bar">
+                        <p>3 Notifications</p>
+                        <span>
+                            <a href="#" class="normal_style">Remove All</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wrapper End-->
+        <!-- <footer class="iq-footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item"><a href="backend/privacy-policy.html">Privacy Policy</a></li>
+                            <li class="list-inline-item"><a href="backend/terms-of-service.html">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 text-right">Copyright 2020 <a href="#">CloudBOX</a> All Rights Reserved.</div>
+                </div>
+            </div>
+        </footer> -->
+        <!-- Backend Bundle JavaScript -->
+        <script src="assets/js/backend-bundle.min.js"></script>
+
+        <script src="assets/js/main-custom.js"></script>
+
+        <script src="https://foliotek.github.io/Croppie/croppie.js"></script>
+
+        <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <!-- app JavaScript -->
+        <script src="assets/js/invite_tags_search.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/datepicker.all.js"></script>
+        <script src="assets/js/datepicker.en.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js" integrity="sha256-AFAYEOkzB6iIKnTYZOdUf9FFje6lOTYdwRJKwTN5mks=" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+        <!-- File Upload Create Customer -->
+        <script src="https://unpkg.com/react@latest/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@latest/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+        <script src="https://unpkg.com/react-quill@latest/dist/react-quill.js"></script>
+        <script src="assets/js/jquery.ui.widget.js"></script>
+        <script src="assets/js/jquery.fileupload.js"></script>
+        <script src="assets/js/jquery.iframe-transport.js"></script>
+        <script src="assets/js/jquery.fancy-fileupload.js"></script>
+
+        <script type="text/javascript" src="https://erp.unesync.com/assets/js/plugins/dropzone/dropzone.min.js"></script>
+
+        <!-- <script>
+            // Create a custom div element
+            var $customDiv = $('<div class="custom-div">Custom content goes here</div>');
+
+            // Bind the "select2:open" event to the select2 element
+            $(".js-example-placeholder-single-cuntry").on("select2:open", function() {
+            // Append the custom div to the select2-dropdown element
+            $(".select2-dropdown").append($customDiv);
+            });
+        </script> -->
+
+        <script>
+            // Mini Header
+            $(".js-states.form-control.nosearch").select2({
+                minimumResultsForSearch: Infinity,
+                theme: "bootstrap4",
+            });
+
+            // Country
+            $(".js-example-placeholder-single-cuntry").select2({
+                placeholder: "Select Country",
+            });
+
+            // State
+            $(".js-example-placeholder-single-state").select2({
+                placeholder: "Select State",
+            });
+        </script>
+
+        <script>
+            $(function() {
+                $('input').on('change', function() {
+                    var input = $(this);
+                    if (input.val().length) {
+                    input.addClass('populated');
+                    } else {
+                    input.removeClass('populated');
+                    }
+                });
+                
+                setTimeout(function() {
+                    $('#fname').trigger('focus');
+                }, 500);
+            });
+        </script>
+
+        <script>
+            // Dropzone
+            Dropzone.autoDiscover = false;
+            var dropzones = [];
+            $(document).ready(function () {
+                $(".dropzone").each(function (i, el) {
+                    var name = "g_" + $(el).data("field");
+                    var myDropzone = new Dropzone(el, {
+                        url: window.location.pathname,
+                        autoProcessQueue: false,
+                        uploadMultiple: true,
+                        parallelUploads: 1,
+                        maxFiles: 5,
+                        paramName: name,
+                        addRemoveLinks: true,
+                        removedfile: function (file) {
+                            file.previewElement.remove();
+                        },
+                    });
+                    dropzones.push(myDropzone);
+                });
+            });
+        </script>
+    </body>
+</html>
